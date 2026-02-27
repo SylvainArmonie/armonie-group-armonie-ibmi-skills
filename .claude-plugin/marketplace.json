@@ -1,20 +1,21 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "armonie-skills",
+  "description": "Skills IBM i pour les equipes Armonie Group / NOTOS",
   "owner": {
-    "name": "Armonie Group / NOTOS",
+    "name": "Sylvain AKTEPE - NOTOS / Armonie Group",
     "email": "s.aktepe@armonie-group.com"
   },
   "plugins": [
     {
       "name": "armonie-ibmi-skills",
+      "source": "./plugins/armonie-ibmi-skills",
+      "description": "RPG ILE, RPG III, RPG II Cycle, DB2 SQL, Administration IBM i et Sysadmin multi-plateforme.",
       "version": "1.0.0",
-      "description": "Collection complète de skills IBM i pour les équipes Armonie Group / NOTOS : RPG ILE, RPG III, RPG II Cycle, DB2 SQL, Administration IBM i et Sysadmin multi-plateforme.",
-      "author": {
-        "name": "Sylvain AKTEPE",
-        "email": "s.aktepe@armonie-group.com"
-      },
       "category": "development",
-      "keywords": ["ibm-i", "as400", "rpg", "db2", "notos", "armonie"]
+      "author": {
+        "name": "Sylvain AKTEPE"
+      }
     }
   ]
 }
