@@ -1,0 +1,204 @@
+      * --------------------------------------------------------------+
+      * H - SPECIFICATION D'ENVIRONNEMENT                   OBSOLETE  |
+      * F - DECLARATION DES FICHIERS                                  |
+      * E - DECLARATION DES TABLES ET TABLEAUX                        |
+      * L - DECLARATION CARACTERISTIQUE IMPRIMANTE          OBSOLETE  |
+      * I - DESCRIPTION DES BUFFERS D'ENTREE - DATA STRUCTURE ETC ... |
+      * C - COMPUTE - LIGNES DE PROGRAMMATION                         |
+      * O - DESCRIPTION DES BUFFERS DE SORTIE                         |
+      * --------------------------------------------------------------+
+      * DESCRIPTION D'UN FICHIER DISK EXTERNE EN LECTURE
+     FCLIENT  IF  E           K        DISK
+      * DESCRIPTION D'UN FICHIER EN LECTURE ET MAJ
+     FCLIENT  UF  E           K        DISK
+      * DESCRIPTION D'UN FICHIER EN LECTURE, MAJ ET AJOUT
+     FCLIENT  UF  E           K        DISK                      A
+      * DESCRIPTION D'UN FICHIER ECRAN (WORKSTATION)
+     FECRANCLICF  E                    WORKSTN
+      * DESCRIPTION D'UN FICHIER IMPRIMANTE
+     FIMPRICLIO   E             25     PRINTER
+      * DESCRIPTION DES TABLES ET DES TABLEAUX CHARGÉS À L'EXECUTION
+      * TABLE NUMERIQUE DE 10 POSTES DE 2 ENTIERS ET 2 DECIMALES
+     E                    TVA        10  4 2
+      * TABLE ALPHAUE DE 12 POSTES DE 70 CARACTERES
+     E                    TXT        12 70
+      * DESCRIPTION DES TABLES ET DES TABLEAUX CHARGÉS À LA COMPILATION
+     E                    MSG     1   5 70
+     E                    FM     12  12  2
+      * DESCRIPTION D'UNE DATA STRUCTURE
+     IDARINV      DS
+     I                                        1   4 AA
+     I                                        5   6 MM
+     I                                        7   8 JJ
+      * DEBUT DU COMPUTE DONC LE PROGRAMME
+      * INITIALISATION DE VARIABLES NUMERIQUES
+     C                     Z-ADD0         I                I=0
+     C                     Z-ADD3         I                I=3
+     C                     Z-SUB0         I                RAZ DE I
+     C                     Z-SUB3         I       52
+      *CODES OPERATIONS +,-,/ ET *
+      * ADDITION
+     C           5         ADD  3         X                X=8
+     C                     ADD  3         X       82       X=11
+     C                     ADD  I         X                X=3
+     C           X         ADD  3         X                X=6
+      * SOUBSTRACTION
+     C           5         SUB  3         J                J=-3
+     C                     SUB  I         J       82       J=5
+     C                     SUB  3         J                J=-5
+      * MULTIPLICATION
+     C           5         MULT 3         J                J=-3
+     C           X         MULT 2         J                J=5
+     C           X         MULT I         J                J=-5
+      * DIVISION
+     C           5         DIV  3         J                J=-3
+     C           X         DIV  2         J                J=5
+      * LE CODE OPERATION MVR DOIT SUIVRE IMMEDIATEMENT LE CALCUL DIV
+     C           X         DIV  I         J                J=-5
+     C                     MVR            RESTE   82
+      * LE CODE OPERATION IF (SI) SOUS LA FORME IFXX
+      * XX - EQ. NE. LE. LT. GE. GT.
+     C           J         IFEQ 6
+     C                     ADD  4         J
+     C                     ENDIF
+      *
+     C           J         IFGT 10
+     C                     Z-ADD0         J
+     C                     ELSE
+     C                     ADD  1         J
+     C                     ENDIF
+      * AND
+     C           *INKC     IFGT '1'
+     C           *IN99     ANDEQ'0'
+     C                     Z-ADD0         J
+     C                     ADD  1         J
+     C                     ENDIF
+      * OR
+     C           TELEP     IFGT *BLANKS
+     C           MOBIL     OREQ *BLANKS
+     C                     Z-ADD0         J
+     C                     ENDIF
+      * LES CODES OPERATION DO, DOWXX, DOUXX
+      * XX - EQ. NE. LE. LT. GE. GT.
+     C           *INKC     DOWEQ'0'
+     C                     Z-ADD0         X
+     C                     ENDDO
+      *
+     C           *IN99     DOUEQ'0'
+     C           J         ANDLE10
+     C                     ADD  1         J
+     C                     ENDDO
+      *
+     C                     DO
+     C                     Z-ADD0         X
+     C                     ENDDO
+      *
+     C                     DO   8
+     C                     ADD  1         X
+     C                     ENDDO
+      *
+     C                     DO   10        K       20
+     C                     Z-ADD0         TVA,K
+      *
+     C           *INKC     DOWEQ'0'
+     C           *IN99     ANDNE'1'
+     C                     EXFMTIMA1
+     C                     ENDDO
+      *
+     C           *INKC     DOUEQ'0'
+     C           *IN99     OREQ '1'
+     C                     EXFMTIMA1
+     C                     ENDDO
+      *
+     C                     SELEC
+     C           OPT       WHEQ 'C'
+     C                     ADD  1         I
+     C                     SUB  8         X
+     C           OPT       WHEQ 'M'
+     C                     ADD  2         I
+     C                     SUB  3         X
+     C                     ENDSL
+      *
+     C           OPT       CASEQ'C'       CREER
+     C           OPT       CASEQ'M'       MODIF
+     C           OPT       CASEQ'S'       SUPP
+     C                     CAS            ERREUR
+     C                     ENDCS
+      * CHAINES DE CARACTERES
+     C                     MOVE 'TOTO'    ZON15  15
+      * ZON15 = '             TOTO'
+     C                     MOVE *BLANKS   ZON15
+     C                     MOVEL'TOTO'    ZON15
+      * ZON15 = 'TOTO             '
+      * TRANSFERT DE CARACTERES DANS TABLE OU TABLEAU
+     C                     MOVEA*ZEROS    TVA
+     C                     MOVEA*ZEROS    TVA,X
+     C                     MOVEA*BLANKS   TXT
+     C                     MOVEA*BLANKS   TXT,3
+      * AFFICHAGE FORMATS FICHIER ECRAN
+     C                     EXFMTIMA2
+     C                     WRITEIMA3
+      * INDICATEURS ET TOUCHES DE FONCTIONS
+      * BOOLEENS FOURNIS PAR LE SYSTEME ET PROPRE AU PROGRAMME
+      * 01 A 99 BOOLEENS ET *INKA À *INKY POUR LES TOUCHES DE FONCTION
+     C                     SETON                     10
+     C                     SETON                     10  14
+     C                     SETOF                     050788
+     C                     MOVE '0'       *INKD
+     C                     MOVE '1'       *IN99
+     C                     MOVE *ON       *IN25
+     C                     MOVE *OFF      *IN03
+     C                     MOVEA'1111'    *IN,99
+     C                     MOVEA'10011101'*IN,10
+     C                     MOVEA*ZEROS    *IN
+      *CODES OPERATIONS FICHIERS
+      *LECTURE SEQUENTIELLE
+     C                     READ ENRCLI                   30
+     C           *IN30     IFEQ '1'
+      * 30 = FIN DE FICHIER ATTEINTE
+      * LECTURE SEQUENTIELLE ARRIERE P=PRIOR
+     C                     READPENRCLI                   30
+     C           *IN30     IFEQ '1'
+     C           CODCLI    READEENRDAC                   31
+      * REPOSITIONNEMENT DE LA TÊTE DE LECTURE
+     C           *LOVAL    SETLLCLIENT                     DEBUT FICHIE
+     C           *HIVAL    SETGTCLIENT                     FIN FICHIER
+     C           CODCLI    SETLLCLIENT                     CODCLI
+      * LECTURE EN MODE RANDOM SUR CLEF
+     C           CODCLI    CHAINENRCLI               50
+     C           *IN50     IFEQ '0'                        TROUVÉ
+     C           *IN50     IFEQ '1'                        PAS TROUVÉ
+      *ECRITURES FICHIERS
+      *AJOUT
+     C                     WRITEENRCLI
+      * MODIFICATION
+     C                     UPDATENRCLI
+      *SUPPRESSION
+     C                     DELETCLIENT
+     C                     SETON                     LR
+      * DEBUT DES SOUS PROGRAMME
+     C           CTL       BEGSR
+     C           NOMCLI    IFEQ *BLANKS
+     C                     SETON                     1099
+     C                     MOVELTXT,1     MES
+     C                     ENDIF
+      * TOUS LES CONTROLES DE L'ÉCRAN
+     C                     ENDSR
+     C           ECRIT     BEGSR
+     C           *IN50     IFEQ '0'
+     C                     UPDATENRCLI
+     C                     ELSE
+     C                     WRITEENRCLI
+     C                     ENDIF
+     C                     ENDSR
+      *
+**
+Le nom est obligatoire
+Le cp est obligatoire
+La ville est obligatoire
+La MONSTER est obligatoire
+Le mobile est obligatoire
+**
+312831303130313130313031
+      *
+

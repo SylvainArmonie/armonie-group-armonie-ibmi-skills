@@ -1,0 +1,16 @@
+      * table Client I pour Input, F pour file, E externe , K pour table avecclé
+     FCLIENT  IF  E           K        DISK
+      * POSITIONNEMENT AU DÉBUT DU FICHIER (VALEUR LA PLUS BASSE DE LA CLÉ)
+     C           *LOVAL    SETLLCLIENT
+      * Lecture du premier enregistrement de la table  CLIENT
+     C                     READ CLIENT                   90
+      * Boucle tant que la lecture ne rencontre pas la fin de table
+      * definie par un indicateur 90
+     C           *IN90     DOWEQ'0'
+      * Affichage du contenu du champ PRECLI à l'écran (console)
+     C           PRECLI    DSPLY
+      * Lecture de lenregistrement suivant
+     C                     READ CLIENT                   90
+     C                     ENDDO
+      * Indique que le programme se termine
+     C                     SETON                         LR

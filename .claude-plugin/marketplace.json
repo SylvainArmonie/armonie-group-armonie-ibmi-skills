@@ -1,0 +1,20 @@
+{
+  "name": "armonie-skills",
+  "owner": {
+    "name": "Armonie Group / NOTOS",
+    "email": "s.aktepe@armonie-group.com"
+  },
+  "plugins": [
+    {
+      "name": "armonie-ibmi-skills",
+      "version": "1.0.0",
+      "description": "Collection complète de skills IBM i pour les équipes Armonie Group / NOTOS : RPG ILE, RPG III, RPG II Cycle, DB2 SQL, Administration IBM i et Sysadmin multi-plateforme.",
+      "author": {
+        "name": "Sylvain AKTEPE",
+        "email": "s.aktepe@armonie-group.com"
+      },
+      "category": "development",
+      "keywords": ["ibm-i", "as400", "rpg", "db2", "notos", "armonie"]
+    }
+  ]
+}

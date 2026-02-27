@@ -1,0 +1,19 @@
+     * TABLEAU CHARGÉ À LA COMPILATION
+     E                    TBB     1   2 20
+     E                    FM     12  12  2
+     * TABLEAU CHARGÉ PENDANT L'EXECUTION DU PROGRAMME
+     E                    TBC         2 10
+     *
+     C                     DSPLY          TBB,1
+     *
+     C                     DSPLY          FM,2
+     C                     DSPLY          FM,12
+     *
+     C                     MOVEA'HELLO !!'TBC,2
+     C                     DSPLY          TBC,2
+     C                     SETON                       LR
+** TBB
+1ER POSTE
+2EME POSTE
+** FM
+312831303130313130313031

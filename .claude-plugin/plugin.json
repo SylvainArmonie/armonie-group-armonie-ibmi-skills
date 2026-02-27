@@ -1,0 +1,18 @@
+{
+  "name": "armonie-ibmi-skills",
+  "version": "1.0.0",
+  "description": "Collection complète de skills IBM i pour les équipes Armonie Group / NOTOS. Inclut RPG ILE, RPG III, RPG II Cycle, DB2 for i SQL, Administration IBM i et Sysadmin multi-plateforme (BRMS, Linux, PRA).",
+  "author": "Sylvain AKTEPE - NOTOS / Armonie Group",
+  "homepage": "https://github.com/armonie-group/armonie-ibmi-skills",
+  "license": "MIT",
+  "keywords": [
+    "ibm-i",
+    "as400",
+    "rpg",
+    "rpgle",
+    "db2",
+    "iseries",
+    "notos",
+    "armonie"
+  ]
+}

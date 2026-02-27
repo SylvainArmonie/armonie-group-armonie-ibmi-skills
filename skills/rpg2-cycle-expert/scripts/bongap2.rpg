@@ -1,0 +1,60 @@
+     *** Déclaration de fichier IP = Input Primary (Cycle) ***********
+     FBONBONL2IP  E           K        DISK
+     FQPRINT  O   F     132     OF     PRINTER
+     *** Déclaration de tableau chargé à la compilation **************
+     E                    TBB     1   2 80
+     *** Déclaration entrée indicateur fichier et rupture ************
+     IFBONBON     33
+     I                                              MARQUEL1
+     I              COULEUR                         COLOR
+     *** Traitement **************************************************
+     C   L1                MOVE *ZERO     TOTP    62
+     C   L1                MOVE *ZERO     QTE     60
+     C   L1                MOVE *ZERO     RST     62
+     C   L1                MOVE *ZERO     PMOY    62
+     *-----* CALCUL *--ENZO WAS HERE---------------------------------*
+     C                     ADD  PRIX      TOTP
+     C                     ADD  1         QTE
+     C           TOTP      DIV  QTE       PMOY
+     C*                    MVR            RST
+     C                     ADD  RST       PMOY
+     *** Fin Traitement **********************************************
+      *---------------------------------------------------------------*
+     *** Output ******************************************************
+     *-------Header ----------------------------*
+     OQPRINT  H  1 1   1P
+     O       OR        OF
+     O                         TBB,1
+     O        H        1P
+     O       OR        OF
+     O                         TBB,2
+     O        H        1P
+     O       OR        OF
+     O                         TBB,1
+     *------ Detail -----------------------------*
+     O        D        33
+     O                                      '|'
+     O                         NUMBER  +  1
+     O                                      '|'
+     O                         MARQUE  +  1
+     O                                      '|'
+     O                         NOM     +  1
+     O                                      '|'
+     O                         PRIX  4 +  1
+     O                                 +  1 '|'
+     *------ Total ------------------------------*
+     O        T        L1
+     O                         TBB,1
+     O        T        L1
+     O                                      '| TOTAL :'
+     O                         TOTP  4
+     O                                      '  NB ART:'
+     O                         QTE   1
+     O                                      '  PRIX MOYEN :'
+     O                         PMOY  4
+     O        T 11     L1
+     O                         TBB,1
+     *--- TABLEAU --------------------------------------------------*
+** TBB
+|-------|---------------------|---------------------|--------|
+| CLE   | MARQUE              | NOM                 | PRIX   |
