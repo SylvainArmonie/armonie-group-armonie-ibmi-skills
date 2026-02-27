@@ -1,0 +1,97 @@
+     *** Déclaration des fichiers
+     FIMPOTS  CF  E                    WORKSTN
+     *** Début du programme
+     * Boucle d'affichage des écrans
+     C           *IN03     DOWEQ'0'
+     * Affichage écran formulaire
+     C                     EXFMTFORM
+     C   03                LEAVE
+     * Calcul quotient familial
+     C                     EXSR CALQUO
+     * Calcul impôts
+     C                     EXSR CALIMP
+     * Reste net net
+     C           REVENU    SUB  IMPOT     RESTE
+     * Affichage écran résultat (boucle tant que pas F12)
+     C           1         DOWEQ1
+     C                     EXFMTRESULT
+     C   03                LEAVE
+     C   12                LEAVE
+     C   10                EXFMTWDETAIL
+     C                     ENDDO
+     C                     ENDDO
+     *** Fin du programme
+     C                     SETON                     LR
+     *****************************************************************
+     *** SOUS-ROUTINES
+     *****************************************************************
+     *
+     *****************************************************************
+     *** CALCUL QUOTIENT FAMILIAL
+     *****************************************************************
+     C           CALQUO    BEGSR
+     * Calcul nombre de parts fiscales
+     C                     EXSR CALPAR
+     * Calcul quotient familial
+     C           REVENU    DIV  PARTS     QUOT   122
+     C                     ENDSR
+     *****************************************************************
+     *** CALCUL NOMBRE DE PARTS FISCALES
+     *****************************************************************
+     C           CALPAR    BEGSR
+     C                     Z-ADD1         PARTS   20
+     * Si marié, les parts augmentent de 1
+     C           MARIE     IFEQ 'O'
+     C                     ADD  1         PARTS
+     C                     ENDIF
+     * Les deux premiers enfants comptent pour 0,5 parts
+     C           ENFANT    IFLE 2
+     C           ENFANT    MULT 0.5       TEMP    20
+     C                     ADD  TEMP      PARTS
+     C                     ELSE
+     C           ENFANT    SUB  2         TEMP
+     C                     ADD  TEMP      PARTS
+     C                     ADD  1         PARTS
+     C                     ENDIF
+     * Le nombre de parts ne peut pas dépasser 6
+     C           PARTS     COMP 6                    80
+     C   80                Z-ADD6         PARTS
+     C                     ENDSR
+     *****************************************************************
+     *** CALCUL IMPOTS SUR LE REVENU
+     *****************************************************************
+     C           CALIMP    BEGSR
+     C                     Z-ADD0         IMPOT
+     * Tranche 5
+     C           QUOT      COMP 157806               80  80
+     C   80      QUOT      SUB  157806    DIFF   122
+     C   80      DIFF      MULT 0.45      WMONT5
+     C   80                ADD  WMONT5    IMPOT
+     C   80                SUB  DIFF      QUOT
+     * Tranche 4
+     C           QUOT      COMP 73369                80  80
+     C   80      QUOT      SUB  73369     DIFF   122
+     C   80      DIFF      MULT 0.41      WMONT4
+     C   80                ADD  WMONT4    IMPOT
+     C   80                SUB  DIFF      QUOT
+     * Tranche 3
+     C           QUOT      COMP 25659                80  80
+     C   80      QUOT      SUB  25659     DIFF   122
+     C   80      DIFF      MULT 0.30      WMONT3
+     C   80                ADD  WMONT3    IMPOT
+     C   80                SUB  DIFF      QUOT
+     * Tranche 2
+     C           QUOT      COMP 10064                80  80
+     C   80      QUOT      SUB  10064     DIFF   122
+     C   80      DIFF      MULT 0.11      WMONT2
+     C   80                ADD  WMONT2    IMPOT
+     C   80                SUB  DIFF      QUOT
+     * Tranche 1 (non imposable)
+     C                     Z-ADD0         WMONT1
+     * Multiplier par le nombre de parts fiscales
+     C                     MULT PARTS     IMPOT
+     * Calcul du taux d'imposition moyen
+     C           IMPOT     MULT 100       TAUXM  162
+     C                     DIV  REVENU    TAUXM
+     C                     Z-ADDTAUXM     WIMPOT
+     C                     ENDSR

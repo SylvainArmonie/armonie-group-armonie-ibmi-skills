@@ -1,0 +1,2597 @@
+# Reference complete des commandes IBM i (QSYS)
+
+Total: 2399 commandes systeme extraites de QSYS, QSYSV7R3M0, QSYSV7R4M0 et bibliotheques systeme.
+
+## Nomenclature des verbes IBM i
+
+| Verbe | Francais | Description |
+|-------|----------|-------------|
+| ADD | Ajouter | Ajoute un element a un objet existant |
+| ALC | Allouer | Alloue une ressource |
+| ANS | Repondre | Repond a un appel ou une question |
+| ANZ | Analyser | Analyse un objet ou des performances |
+| CHG | Modifier | Modifie les attributs d'un objet existant |
+| CHK | Verifier | Verifie un objet ou une configuration |
+| CLR | Mettre a blanc | Supprime le contenu sans supprimer l'objet |
+| CMP | Comparer | Compare deux objets |
+| CPY | Copier | Copie un objet vers un autre |
+| CRT | Creer | Cree un nouvel objet |
+| CVT | Convertir | Convertit un format vers un autre |
+| DLT | Supprimer | Supprime definitivement un objet |
+| DMP | Clicher/Dump | Cree un dump pour diagnostic |
+| DSP | Afficher | Affiche les informations d'un objet |
+| EDT | Editer | Ouvre un editeur pour modifier |
+| END | Arreter | Arrete un processus ou service |
+| FND | Rechercher | Recherche une chaine ou un element |
+| GO | Aller a | Accede a un menu ou ecran |
+| GRT | Accorder | Accorde des droits ou autorisations |
+| HLD | Suspendre | Suspend temporairement un element |
+| INS | Installer | Installe un composant |
+| MON | Intercepter | Intercepte un message ou evenement |
+| MOV | Deplacer | Deplace un objet vers un autre emplacement |
+| MRG | Fusionner | Fusionne des elements ensemble |
+| OPN | Ouvrir | Ouvre un fichier ou ressource |
+| OVR | Substituer | Substitue un fichier par un autre |
+| PRT | Imprimer | Imprime ou genere un rapport |
+| RCL | Recuperer | Recupere des ressources ou repare |
+| RCV | Recevoir | Recoit un message ou fichier |
+| RGZ | Reorganiser | Reorganise un fichier ou dossier |
+| RLS | Liberer | Libere un element suspendu |
+| RMV | Enlever | Enleve un element d'un objet |
+| RSM | Reprendre | Reprend un processus suspendu |
+| RST | Restaurer | Restaure un objet depuis une sauvegarde |
+| RTV | Extraire | Extrait une valeur pour la stocker en variable CL |
+| RUN | Executer | Execute un programme ou requete |
+| SAV | Sauvegarder | Sauvegarde un objet |
+| SBM | Soumettre | Soumet un travail ou commande |
+| SET | Definir | Definit une valeur ou configuration |
+| SND | Envoyer | Envoie un message ou fichier |
+| STR | Demarrer | Demarre un service ou processus |
+| TFR | Transferer | Transfere un travail ou le controle |
+| TRC | Tracer | Active le trace pour diagnostic |
+| VFY | Verifier | Verifie une configuration ou connexion |
+| VRY | Varier | Change l'etat d'une configuration |
+| WRK | Gerer | Ecran de gestion interactif (option 5250) |
+
+## ADD — Ajouter (152 commandes)
+
+- **ADDACC** — Ajouter un code d'accès
+- **ADDAJE** — Ajouter poste travail auto
+- **ADDALRACNE** — Ajouter poste action alerte
+- **ADDALRD** — Ajouter description d'alerte
+- **ADDALRSLTE** — Ajouter poste sélection alerte
+- **ADDAPWSYM** — ADD APW SYMBOL SPECIFICATION
+- **ADDASPCPYD** — ADD ASP COPY DESCRIPTION
+- **ADDAUTLE** — Ajouter poste liste autorisat
+- **ADDBKP** — Ajouter un point d'arrêt
+- **ADDBNDDIRE** — Ajouter poste répertoire liage
+- **ADDCADMRE** — ADD ADMIN DOMAIN MRE
+- **ADDCADNODE** — ADD ADMIN DOMAIN NODE ENTRY
+- **ADDCCSCLT** — ADD CC SERVER CLIENT
+- **ADDCFGLE** — Ajouter poste liste de config
+- **ADDCICSCVT** — ADD CICS CVT ENTRY
+- **ADDCICSDCT** — ADD CICS DCT ENTRY
+- **ADDCICSFCT** — ADD CICS FCT ENTRY
+- **ADDCICSGLT** — ADD CICS GLT ENTRY
+- **ADDCICSJCT** — ADD CICS JCT ENTRY
+- **ADDCICSPCT** — ADD CICS PCT ENTRY
+- **ADDCICSPPT** — ADD CICS PPT ENTRY
+- **ADDCICSSIT** — ADD CICS SIT ENTRY
+- **ADDCICSTCS** — ADD CICS TCS ENTRY
+- **ADDCICSTCT** — ADD CICS TCT ENTRY
+- **ADDCICSTST** — ADD CICS TST ENTRY
+- **ADDCKMKSFE** — Add Keystore File Entry
+- **ADDCLUMON** — ADD CLUSTER MONITOR
+- **ADDCLUNODE** — ADD CLUSTER NODE ENTRY
+- **ADDCMDCRQA** — ADD COMMAND CRQ ACTIVITY
+- **ADDCMNE** — Ajouter poste communications
+- **ADDCOMSNMP** — Add Community for SNMP
+- **ADDCRGDEVE** — ADD CRG DEVICE ENTRY
+- **ADDCRGNODE** — ADD CRG NODE ENTRY
+- **ADDCRQA** — ADD CRQ ACTIVITY
+- **ADDDEVDMNE** — ADD DEVICE DOMAIN ENTRY
+- **ADDDIRE** — Ajouter un poste au répertoire
+- **ADDDIRINST** — Add Directory Server Instance
+- **ADDDIRSHD** — Ajouter système en réplication
+- **ADDDLOAUT** — Ajouter droits sur doc ou doss
+- **ADDDNSSIG** — Add DNS Signature
+- **ADDDSTCLGE** — ADD DST CATALOG ENTRY
+- **ADDDSTLE** — Ajouter poste liste diffusion
+- **ADDDSTQ** — Ajouter file de distribution
+- **ADDDSTRTE** — Ajouter route de distribution
+- **ADDDSTSYSN** — Ajouter nom secondaire système
+- **ADDDTADFN** — Ajouter définition de données
+- **ADDDWDFN** — Add Disk Watcher Definition
+- **ADDEMLCFGE** — Ajouter poste configuration
+- **ADDENVVAR** — Add Environment Variable
+- **ADDEWCBCDE** — Ajouter poste code barres EWC
+- **ADDEWCM** — Ajouter membre ctl sans fil
+- **ADDEWCPTCE** — Ajouter un poste PTC EWC
+- **ADDEWLM** — Ajouter membre ligne sans fil
+- **ADDEXITPGM** — Add Exit Program
+- **ADDFCTE** — ADD FORMS CONTROL ENTRY
+- **ADDFNTTBLE** — Ajouter poste table de polices
+- **ADDHACFGD** — ADD HA CONFIGURATION DESC.
+- **ADDHAPCY** — ADD HA POLICY
+- **ADDHDBDLFM** — Ajouter une BD hôte à DLFM
+- **ADDHYSSTGD** — ADD HYPERSWAP STORAGE DESC
+- **ADDICFDEVE** — Ajouter unité à fichier ICF
+- **ADDIMGCLGE** — Ajouter poste catalogue images
+- **ADDIPSIFC** — ADD IP OVER SNA INTERFACE
+- **ADDIPSLOC** — ADD IP OVER SNA LOCATION
+- **ADDIPSRTE** — ADD IP OVER SNA ROUTE
+- **ADDJOBJS** — Ajouter un travail JS
+- **ADDJOBQE** — Ajouter poste file de travaux
+- **ADDJOBSCDE** — Ajouter poste planning travaux
+- **ADDJWDFN** — Add Job Watcher Definition
+- **ADDKRBKTE** — Add Kerberos Keytab Entry
+- **ADDKRBTKT** — Add Kerberos Ticket
+- **ADDLANADPI** — Ajouter info adaptateur LAN
+- **ADDLFM** — Ajouter membre fichier logique
+- **ADDLIBLE** — Ajouter poste liste biblio
+- **ADDLICCRQA** — ADD LICENSE CRQ ACTIVITY
+- **ADDLICKEY** — Ajouter info clé de licence
+- **ADDLNK** — Ajouter un lien
+- **ADDMEDBRM** — Add Media to BRM
+- **ADDMEDIBRM** — Add Media Information to BRM
+- **ADDMFS** — Ajouter système fichiers monté
+- **ADDMLMBRM** — Add Media Library Media to BRM
+- **ADDMODCCA** — Add Code Coverage Module
+- **ADDMSGD** — Ajouter description de message
+- **ADDMSTPART** — Add Master Key Part
+- **ADDNCK** — Ajouter un alias
+- **ADDNETJOBE** — Ajouter poste travaux réseau
+- **ADDNETTBLE** — Add Network Table Entry
+- **ADDNODLE** — Add Node List Entry
+- **ADDNWSSTGL** — Ajouter lien stockage serveur
+- **ADDOBJCRQA** — ADD OBJECT CRQ ACTIVITY
+- **ADDOPTCTG** — Ajouter une cartouche optique
+- **ADDOPTSVR** — Ajouter un serveur optique
+- **ADDOSPFARA** — Add OSPF Area
+- **ADDOSPFIFC** — Add OSPF Interface
+- **ADDOSPFLNK** — Add OSPF Virtual Link
+- **ADDOSPFRNG** — Add OSPF Range
+- **ADDPCLTBLE** — Add Protocol Table Entry
+- **ADDPEXDFN** — Add PEX Definition
+- **ADDPEXFTR** — Add PEX Filter
+- **ADDPFCST** — Ajouter contrainte fich phys
+- **ADDPFM** — Ajouter membre à fich physique
+- **ADDPFTRG** — Add Physical File Trigger
+- **ADDPFVLM** — Add Phy File Variable Len Mbr
+- **ADDPFXDLFM** — Ajouter un préfixe à DLFM
+- **ADDPGM** — Ajouter programme au débogage
+- **ADDPJE** — Ajouter poste trav anticipés
+- **ADDPRBACNE** — Ajouter poste action incident
+- **ADDPRBSLTE** — Ajouter poste sélect incident
+- **ADDPRDCRQA** — ADD PRODUCT CRQ ACTIVITY
+- **ADDPRDLICI** — Add License Information
+- **ADDPTFCRQA** — ADD PTF CRQ ACTIVITY
+- **ADDRDBDIRE** — Ajouter poste répertoire RDB
+- **ADDREXBUF** — Add REXX Buffer
+- **ADDRIPACP** — Add RIP Accepted Route
+- **ADDRIPFLT** — Add RIP Filter
+- **ADDRIPIFC** — Add RIP Interface
+- **ADDRIPIGN** — Add Ignored RIP Neighbor
+- **ADDRJECMNE** — ADD RJE COMMUNICATION ENTRY
+- **ADDRJERDRE** — ADD RJE READER ENTRY
+- **ADDRJEWTRE** — ADD RJE WRITER ENTRY
+- **ADDRMTDFN** — Ajouter définition éloignée
+- **ADDRMTJRN** — Ajouter un journal éloigné
+- **ADDRPTOND** — ADD REPORT
+- **ADDRPYLE** — Ajouter poste liste de réponse
+- **ADDRSCCRQA** — ADD RESOURCE CRQ ACTIVITY
+- **ADDRTGE** — Ajouter un poste de routage
+- **ADDSCHIDXE** — Ajouter poste d'index d'aide
+- **ADDSDSTLE** — Add SMTP Dist List Entry
+- **ADDSMTPLE** — Add SMTP List Entry
+- **ADDSMTPRLE** — Add Remote Login Entry
+- **ADDSOCE** — Ajouter poste sphère contrôle
+- **ADDSRVTBLE** — Add Service Table Entry
+- **ADDSVCCPYD** — ADD SVC ASP COPY DESCRIPTION
+- **ADDSVRAUTE** — Ajouter poste authent serveur
+- **ADDSYMPPW** — ADD SYMBOL
+- **ADDTAPCTG** — Ajouter une cartouche de bande
+- **ADDTCPHTE** — Add TCP/IP Host Table Entry
+- **ADDTCPIFC** — Add TCP/IP Interface
+- **ADDTCPPORT** — Add TCP/IP Port Restriction
+- **ADDTCPPTP** — Add Point-to-Point Profile
+- **ADDTCPRSI** — ADD TCP/IP REMOTE SYSTEM
+- **ADDTCPRTE** — Add TCP/IP Route
+- **ADDTCPSVR** — Add TCP/IP Server
+- **ADDTRC** — Ajouter une trace au débogage
+- **ADDTRCFTR** — Add Trace Filter
+- **ADDUSRSMTP** — Add User SMTP
+- **ADDUSRSNMP** — Add User for SNMP
+- **ADDVACSNMP** — Add VACM for SNMP
+- **ADDWLCGRP** — Ajouter gpe charge de travail
+- **ADDWLCPRDE** — Ajouter poste gpe charge trav
+- **ADDWQLUSR** — ADD WEB QUERY LICENSED USER
+- **ADDWSE** — Ajouter poste écran à s-syst
+
+## ALC — Allouer (1 commandes)
+
+- **ALCOBJ** — Allouer un objet
+
+## ANS — Repondre (2 commandes)
+
+- **ANSLIN** — Répondre à un appel
+- **ANSQST** — Répondre aux questions
+
+## ANZ — Analyser (13 commandes)
+
+- **ANZCMDPFR** — Analyze Command Performance
+- **ANZDBF** — Analyze Database Files
+- **ANZDBFKEY** — Analyze Database File Keys
+- **ANZDFTPWD** — Analyser mots passe par défaut
+- **ANZLIBBRM** — Analyze Libraries using BRM
+- **ANZOBJCVN** — Analyser conversion de l'objet
+- **ANZPFRDT2** — Analyze Performance Data
+- **ANZPFRDTA** — Analyze Performance Data
+- **ANZPGM** — Analyze Programs
+- **ANZPRB** — Analyser les incidents
+- **ANZPRFACT** — Analyser activité profils
+- **ANZQRY** — Analyser une définition QUERY
+- **ANZUSROBJ** — Analyze User Objects
+
+## AUTRE (238 commandes)
+
+- **APING** — Verify APPC Connection
+- **APYJRNCHG** — Appliquer modifs journalisées
+- **APYJRNCHGX** — Appliquer modifs journal étend
+- **APYPTF** — Appliquer des PTF
+- **APYRMTPTF** — APPLY REMOTE PTF
+- **AREXEC** — Run Remote Command
+- **ARPING** — Send ARP Request
+- **ASKQST** — Poser une question
+- **BCHJOB** — Début de travail par lots
+- **CALL** — Call Program
+- **CALLPRC** — Call Bound Procedure
+- **CALLSUBR** — Appeler sous-programme
+- **CD** — Modifier répertoire en cours
+- **CFGACCWEB** — Configurer Access for Web
+- **CFGCRGCNR** — CONFIGURE CRG CONTAINER
+- **CFGDEVASP** — Configurer ASP unité
+- **CFGDEVMLB** — Configurer unité médiathèque
+- **CFGDSTSRV** — Configurer serv distribution
+- **CFGGEOMIR** — CONFIGURE GEOGRAPHIC MIRROR
+- **CFGIPS** — CONFIGURE IP OVER SNA
+- **CFGPFRCOL** — Configurer collecte de perf
+- **CFGPM400** — Configure PM Agent
+- **CFGPMAGT** — Configure PM Agent
+- **CFGRPDS** — CONFIGURE VM/MVS BRIDGE
+- **CFGRTG** — Configure Routing Protocols
+- **CFGSYSSEC** — Configurer sécurité système
+- **CFGTCP** — Configure TCP/IP
+- **CFGTCPAPP** — Configure TCP/IP Applications
+- **CFGTCPBP** — Configure TCP/IP BOOTP
+- **CFGTCPFTP** — Configure TCP/IP FTP
+- **CFGTCPHTTP** — Configure TCP/IP HTTP
+- **CFGTCPLPD** — Configure TCP/IP LPD
+- **CFGTCPPTP** — Configure Point-to-Point TCPIP
+- **CFGTCPRTD** — Configure TCP/IP RouteD
+- **CFGTCPRXC** — Configure TCP/IP REXEC
+- **CFGTCPSMTP** — Configure TCP/IP SMTP
+- **CFGTCPSNMP** — Configure TCP/IP SNMP
+- **CFGTCPTELN** — Configure TCP/IP TELNET
+- **CFGWQSSO** — CONFIGURE WEB QUERY SSO
+- **CHDIR** — Modifier répertoire en cours
+- **CLOF** — Fermer un fichier
+- **CLOSE** — Fermer fichier base de données
+- **CMD** — Définition de commande
+- **CNLRJERDR** — CANCEL RJE READER
+- **CNLRJEWTR** — CANCEL RJE WRITER
+- **CODECOV** — Code coverage
+- **COMMIT** — Valider
+- **COPY** — Copier un objet
+- **COPYRIGHT** — Copyright
+- **CPROBJ** — Comprimer un objet
+- **DATA** — Données
+- **DB2LDIF** — Copy To LDIF
+- **DCPOBJ** — Décomprimer un objet
+- **DEL** — Enlever un lien
+- **DEP** — Définition dépendante
+- **DFLAPW** — DISPLAY FORM DESCRIPTION LIST
+- **DFLKPF** — FORM DESCRIPTION LIST
+- **DFLPPW** — DISPLAY FORM DESCRIPTION LIST
+- **DIG** — Start DIG Query
+- **DLCOBJ** — Désallouer un objet
+- **DLYJOB** — Retarder le travail
+- **DLYSRVAGTP** — Rapport incident retard SRVAGT
+- **DO** — Début de groupe DO
+- **DOFOR** — DOFOR
+- **DOUNTIL** — DOUNTIL
+- **DOWHILE** — DOWHILE
+- **DSCJOB** — Déconnecter un travail
+- **DUPDKT** — Dupliquer une disquette
+- **DUPMEDBRM** — Duplicate Media using BRM
+- **DUPOPT** — Dupliquer un volume optique
+- **DUPTAP** — Dupliquer une bande
+- **EJTEMLOUT** — Ejecter sortie de l'émulation
+- **ELEM** — Définition d'élément
+- **ELSE** — Sinon
+- **EMLPRTKEY** — Emuler le panneau d'imprimante
+- **EOF** — END OF FILE
+- **ERASE** — Enlever un lien
+- **EXPORT** — Exporter symbole de programme
+- **EXPORTFS** — Modifier exportations NFS
+- **EXTMEDIBRM** — Extract Media Information
+- **EXTPGMINF** — Extract Program Information
+- **FILDOC** — Classer un document
+- **FMTDTA** — Trier les données
+- **FTP** — Start TCP/IP File Transfer
+- **GENCAT** — Générer catalogue de messages
+- **GENCKMKSFE** — Generate Keystore File Entry
+- **GENCMDDOC** — Générer doc sur commandes
+- **GENCSRC** — Generate C/C++ Source
+- **GENDNSDSRR** — Generate DNSSEC DS RR
+- **GENDNSKEY** — Generate DNS Key
+- **GENJVMDMP** — Générer cliché JVM
+- **GENLICKEY** — Generate License Key
+- **HOST** — Start HOST Query
+- **IF** — Si
+- **INCLUDE** — Inclure source CL
+- **INZBRM** — Initialize BRMS
+- **INZCICS** — INITIALIZE CICS TABLES
+- **INZDKT** — Initialiser une disquette
+- **INZDLFM** — Initialiser DLFM
+- **INZDSTQ** — Initialiser file distribution
+- **INZMEDBRM** — Initialize Media using BRM
+- **INZNWSCFG** — Initialiser conf serv réseau
+- **INZOPT** — Initialiser un volume optique
+- **INZPCS** — Initialiser IBM i Access
+- **INZPFM** — Initialiser membre de fichier
+- **INZSYS** — Initialiser données système
+- **INZTAP** — Initialiser une bande
+- **ITERATE** — Iterate
+- **JAVA** — Exécuter un programme Java
+- **JSSBMJOB** — Soumettre un travail
+- **LDFNTKPF** — LOAD BASE FONTS
+- **LDIF2DB** — Copy From LDIF
+- **LEAVE** — Leave
+- **LNKDTADFN** — Lier/délier définition données
+- **LODIMGCLG** — Charg/Décharg catalogue images
+- **LODIMGCLGE** — Charg/déchar/mont poste IMGCLG
+- **LODIPFTR** — Load/Unload IP Filter
+- **LODOPTFMW** — Charger microprogramme optique
+- **LODPPW** — LOAD USER DEFINED CHARACTERS
+- **LODPTF** — Charger des PTF
+- **LODQSTDB** — Charger base de données Q&R
+- **LODRUN** — Charger et lancer
+- **LPR** — Send TCP/IP Spooled File
+- **MD** — Créer un répertoire
+- **MGRBRM** — Migrate using BRM
+- **MGRMEDRDAR** — MIGRATE MEDIA
+- **MIGWEBQRY** — MIGRATE DB2 WEB QUERY
+- **MKDIR** — Créer un répertoire
+- **MOUNT** — Ajouter système fichiers monté
+- **NDPING** — Send Neighbor Solicitation
+- **NETSTAT** — Work with TCP/IP Network Sts
+- **NSLOOKUP** — Start NSLOOKUP Query
+- **NSUPDATE** — Run DNS Update
+- **ORDSPTPTF** — ORDER SUPPORTED PRODUCT PTFS
+- **OTHERWISE** — Otherwise
+- **OVLPPW** — OVERLAY FORM
+- **PARM** — Définition de paramètre
+- **PGM** — Programme
+- **PING** — Verify TCP/IP Connection
+- **PKGINSOBJ** — PACKAGE INSTALLABLE OBJECT
+- **PKGPRDDST** — PACKAGE PRODUCT FOR DST
+- **PKGPRDOPT** — Package Product Option
+- **PMTCTL** — Définition contrôle d'invite
+- **POSDBF** — Positionner un fichier BD
+- **PWRDWNSYS** — Mettre le système hors tension
+- **QPZA000008** — Créer un programme COBOL lié
+- **QPZA000009** — Créer un module COBOL
+- **QPZA000010** — Add Code Coverage Module
+- **QPZA000011** — Code coverage
+- **QPZA000012** — Generate Code Coverage Report
+- **QPZA000013** — End Code Coverage
+- **QPZA000015** — Remove Code Coverage Module
+- **QPZA000016** — Start Code Coverage
+- **QPZA000018** — Créer un programme RPG lié
+- **QPZA000019** — Créer un module RPG
+- **QPZA000072** — Add Remote Login Entry
+- **QPZA000073** — Change Remote Login Entry
+- **QPZA000152** — DISPLAY FUNCTION BRMS
+- **QPZA000160** — SET FUNCTION BRMS
+- **QPZA000232** — Save Object using BRM
+- **QPZA000233** — Initialize BRMS
+- **QPZA000283** — Call Program
+- **QPZA000284** — Call Bound Procedure
+- **QPZA000604** — Créer un format QM
+- **QPZA000605** — Créer une requête QM
+- **QPZA000607** — Afficher les liens d'objets
+- **QPZA000608** — Gérer les liens d'objets
+- **QPZA000660** — Add OSPF Interface
+- **QPZA000661** — Add OSPF Virtual Link
+- **QPZA000662** — Add RIP Interface
+- **QPZA000663** — Change OSPF Attributes
+- **QPZA000664** — Change OSPF Interface
+- **QPZA000665** — Change OSPF Virtual Link
+- **QPZA000666** — Change RIP Interface
+- **QPZA000829** — Ajouter déclencheur fich phys
+- **QPZA000830** — Modifier déclencheur fich phys
+- **QPZA000977** — Add PEX Definition
+- **QPZA001294** — Créer un programme CL lié
+- **QPZA001295** — Créer un module CL
+- **QPZA001296** — Créer une commande
+- **QRYDOCLIB** — Interroger biblio de documents
+- **QRYDOCOND** — QUERY DOCUMENT
+- **QRYDST** — Interroger les distributions
+- **QRYPRBSTS** — Interroger l'état d'incident
+- **QRYTIEF** — Interroger les fichiers TIE
+- **QSH** — Start QSH
+- **QUAL** — Définition de qualificatif
+- **RADBKP** — Restore APAR Data
+- **RD** — Enlever un répertoire
+- **READFILE** — READ A FILE
+- **REGWQUSR** — REGISTER WEB QUERY USER
+- **REN** — Rebaptiser un objet
+- **RETURN** — Retour
+- **RMDIR** — Enlever un répertoire
+- **RNDC** — Run RNDC Command
+- **RNM** — Rebaptiser un objet
+- **RNMDIRE** — Rebaptiser poste du répertoire
+- **RNMDKT** — Rebaptiser une disquette
+- **RNMDLO** — Rebaptiser document ou dossier
+- **RNMDSTL** — Rebaptiser liste de diffusion
+- **RNMJOBJS** — Renommer un travail JS
+- **RNMLANADPI** — Rebaptiser un adaptateur LAN
+- **RNMM** — Rebaptiser un membre
+- **RNMNCK** — Rebaptiser un alias
+- **RNMOBJ** — Rebaptiser un objet
+- **RNMSDSTL** — Rename SMTP Dist List
+- **RNMTCPHTE** — Rename TCP/IP Host Table Entry
+- **ROLLBACK** — Invalider
+- **RPCBIND** — Démarrer démon de liage RPC
+- **RPCGEN** — Convertir source RPC
+- **RPLDOC** — Remplacer un document
+- **RRTJOB** — Rediriger un travail
+- **RTNSUBR** — Renvoyer du sous-programme
+- **RVKACCAUT** — Révoquer droits/codes d'accès
+- **RVKOBJAUT** — Révoquer droits sur un objet
+- **RVKPUBAUT** — Révoquer les droits publics
+- **RVKUSRPMN** — Révoquer procuration utilisat
+- **RVKWSOAUT** — Révoquer droits sur objet OG
+- **SELECT** — Select
+- **SIGNOFF** — Clore une session
+- **SLTCMD** — Choix d'une commande
+- **STATFS** — Afficher infos syst fich monté
+- **SUBR** — Sous-programme
+- **TELNET** — Start TCP/IP Telnet
+- **TRACEROUTE** — Trace TCP/IP Route
+- **TRNCKMKSF** — Translate Keystore File
+- **UNMOUNT** — Enlever système fichiers monté
+- **UPDDTA** — MàJ données via pgm temporaire
+- **UPDPGM** — Mettre à jour un programme
+- **UPDPTFINF** — Mettre à jour infos de PTF
+- **UPDSRVPGM** — Mettre à jour pgm de service
+- **UPDSYSINF** — Mettre à jour infos système
+- **UPDTCPINF** — Update TCP/IP Information
+- **WAIT** — Attendre
+- **WHEN** — When
+- **WQSETNLS** — WEB QUERY NLS CONFIGURATION
+- **ZRMLOG** — Write BRM Log
+- **ZRMQRYSLT** — Build Query Select
+
+## CHG — Modifier (330 commandes)
+
+- **CHGACGCDE** — Modifier le code comptabilité
+- **CHGACTPRFL** — Modifier liste profils actifs
+- **CHGACTSCDE** — Modifier planning activation
+- **CHGAJE** — Modifier poste travail auto
+- **CHGALRACNE** — Modifier poste action alerte
+- **CHGALRD** — Modifier description d'alerte
+- **CHGALRSLTE** — Modifier poste sélect alerte
+- **CHGALRTBL** — Modifier une table d'alertes
+- **CHGAMTDFT** — CHANGE AMT DEFAULTS
+- **CHGASPA** — Modifier attribut d'ASP
+- **CHGASPACT** — Modifier activité d'ASP
+- **CHGASPCPYD** — CHANGE ASP COPY DESCRIPTION
+- **CHGASPSSN** — CHANGE ASP SESSION
+- **CHGATR** — Modifier attribut
+- **CHGAUD** — Modifier la valeur d'audit
+- **CHGAUT** — Modifier les droits
+- **CHGAUTCOL** — Modifier collecte des droits
+- **CHGAUTJS** — Modifier droits sur travaux JS
+- **CHGAUTLE** — Modifier poste liste autorisat
+- **CHGBCKUP** — Modifier options de sauvegarde
+- **CHGBPA** — Change BOOTP Attributes
+- **CHGCAD** — CHANGE CLUSTER ADMIN DOMAIN
+- **CHGCCSA** — CHANGE CC SERVER ATTRIBUTES
+- **CHGCDEFNT** — Modifier une police codée
+- **CHGCFGL** — Modifier liste configuration
+- **CHGCFGLE** — Modifier postes liste config
+- **CHGCICSCVT** — CHANGE CICS CVT ENTRY
+- **CHGCICSDCT** — CHANGE CICS DCT ENTRY
+- **CHGCICSFCT** — CHANGE CICS FCT ENTRY
+- **CHGCICSGRP** — CHANGE CICS GROUP
+- **CHGCICSJCT** — CHANGE CICS JCT ENTRY
+- **CHGCICSPCT** — CHANGE CICS PCT ENTRY
+- **CHGCICSPPT** — CHANGE CICS PPT ENTRY
+- **CHGCICSSIT** — CHANGE CICS SIT ENTRY
+- **CHGCICSSTS** — CHANGE CICS STATUS
+- **CHGCICSTCS** — CHANGE CICS TCS ENTRY
+- **CHGCICSTCT** — CHANGE CICS TCT ENTRY
+- **CHGCICSTST** — CHANGE CICS TST ENTRY
+- **CHGCLNUP** — Modifier les options de ménage
+- **CHGCLS** — Modifier une classe
+- **CHGCLU** — CHANGE CLUSTER
+- **CHGCLUMON** — CHANGE CLUSTER MONITOR
+- **CHGCLUNODE** — CHANGE CLUSTER NODE ENTRY
+- **CHGCLURCY** — Change Cluster Recovery
+- **CHGCLUVER** — CHANGE CLUSTER VERSION
+- **CHGCMD** — Modifier une commande
+- **CHGCMDCRQA** — CHANGE COMMAND CRQ ACTIVITY
+- **CHGCMDDFT** — Modifier valeurs/défaut de cde
+- **CHGCMNE** — Modifier poste communications
+- **CHGCNTINF** — Modifier point de contact
+- **CHGCOMSNMP** — Change Community for SNMP
+- **CHGCOSD** — Modifier une classe de service
+- **CHGCRG** — CHANGE CLUSTER RESOURCE GROUP
+- **CHGCRGCNR** — CHANGE CRG CONTAINER
+- **CHGCRGDEVE** — CHANGE CRG DEVICE ENTRY
+- **CHGCRGPRI** — CHANGE CRG PRIMARY
+- **CHGCRQA** — CHANGE CRQ ACTIVITY
+- **CHGCRQD** — Change CRQ Description
+- **CHGCSI** — Change Comm Side Information
+- **CHGCSMSSN** — CHANGE CSM ASP SESSION
+- **CHGCTLAPPC** — Modifier un contrôleur APPC
+- **CHGCTLASC** — Modifier contrôleur asynchrone
+- **CHGCTLBSC** — Modifier un contrôleur BSC
+- **CHGCTLFNC** — CHANGE CTL DESC (FINANCE)
+- **CHGCTLHOST** — Modifier contrôleur hôte SNA
+- **CHGCTLLWS** — Modifier ctl postes en local
+- **CHGCTLNET** — Modifier un contrôleur réseau
+- **CHGCTLRTL** — CHANGE CTL DESC (RETAIL)
+- **CHGCTLRWS** — CHANGE CTL DESC (REMOTE WS)
+- **CHGCTLTAP** — Modifier un contrôleur bande
+- **CHGCTLVWS** — Modifier ctl postes virtuels
+- **CHGCURDIR** — Modifier répertoire en cours
+- **CHGCURLIB** — Modifier bibliothèque en cours
+- **CHGDBG** — Modifier le débogage
+- **CHGDDMF** — Modifier un fichier DDM
+- **CHGDDMTCPA** — Modifier attributs TCP/IP DDM
+- **CHGDEVAPPC** — Modifier une unité APPC
+- **CHGDEVASC** — Modifier une unité asynchrone
+- **CHGDEVASP** — Modifier desc unité (ASP)
+- **CHGDEVBSC** — Modifier une unité BSC
+- **CHGDEVCRP** — Modifier unité de chiffrement
+- **CHGDEVDKT** — Modifier une unité disquette
+- **CHGDEVDSP** — Modifier une unité écran
+- **CHGDEVFNC** — CHANGE DEVICE DESC (FINANCE)
+- **CHGDEVHOST** — Modifier une unité hôte SNA
+- **CHGDEVINTR** — Modifier une unité INTRA
+- **CHGDEVMLB** — Modifier une unité médiathèque
+- **CHGDEVNET** — Modifier une unité réseau
+- **CHGDEVNWSH** — Modifier descr unité NWSH
+- **CHGDEVOPT** — Modifier une unité optique
+- **CHGDEVPRT** — Modifier une unité imprimante
+- **CHGDEVRTL** — CHANGE DEVICE DESC (RETAIL)
+- **CHGDEVSNPT** — Modifier une unité SNPT
+- **CHGDEVSNUF** — Modifier une unité SNUF
+- **CHGDEVTAP** — Modifier une unité bande
+- **CHGDHCPA** — Change DHCP Attributes
+- **CHGDHCPSVR** — CHANGE DHCP SERVER
+- **CHGDIRE** — Modifier poste du répertoire
+- **CHGDIRSHD** — Modifier syst en réplication
+- **CHGDIRSVRA** — Change Directory Server Attr
+- **CHGDKTF** — Modifier un fichier disquette
+- **CHGDLJS** — Modifier biblio données via JS
+- **CHGDLOAUD** — Modifier niveau d'audit DLO
+- **CHGDLOAUT** — Modifier droits sur doc ou dos
+- **CHGDLOOWN** — Modifier propriétaire doc/doss
+- **CHGDLOPGP** — Modifier groupe principal DLO
+- **CHGDNSA** — Change DNS Server Attributes
+- **CHGDOCD** — Modifier descripteurs document
+- **CHGDSPF** — Modifier un fichier écran
+- **CHGDSTA** — Modifier attrib distribution
+- **CHGDSTD** — Modifier une distribution
+- **CHGDSTL** — Modifier liste de diffusion
+- **CHGDSTPWD** — Modifier mdp Outils maintenanc
+- **CHGDSTQ** — Modifier file de distribution
+- **CHGDSTRTE** — Modifier route de distribution
+- **CHGDTA** — Modifier les données
+- **CHGDTAARA** — Modifier une zone de données
+- **CHGDTAJS** — Modifier données du paramètre
+- **CHGEMLCFGE** — Modifier poste configuration
+- **CHGENVVAR** — Change Environment Variable
+- **CHGEWCBCDE** — Modifier poste code barres EWC
+- **CHGEWCM** — Modifier membre ctl sans fil
+- **CHGEWCPTCE** — Modifier un poste PTC EWC
+- **CHGEWLM** — Modifier membre ligne sans fil
+- **CHGEXPSCDE** — Modifier planning péremption
+- **CHGFCNARA** — Change Functional Area
+- **CHGFCNUSG** — Modifier utilisation fonction
+- **CHGFCT** — CHANGE FORMS CONTROL TABLE
+- **CHGFCTE** — CHANGE FORMS CONTROL ENTRY
+- **CHGFNTRSC** — Modifier une ressource police
+- **CHGFNTTBLE** — Modifier poste table polices
+- **CHGFTPA** — Change FTP Attributes
+- **CHGFTR** — Modifier un filtre
+- **CHGGPHFMT** — Change Graph Format
+- **CHGGPHPKG** — Change Graph Package
+- **CHGGRPA** — Modifier attributs de groupe
+- **CHGHACFGD** — CHANGE HA CONFIGURATION DESC.
+- **CHGHAPCY** — CHANGE HA POLICY
+- **CHGHLLPTR** — Modifier un pointeur HLL
+- **CHGHTTPA** — Change HTTP Attributes
+- **CHGHYSSTGD** — CHANGE HYPERSWAP STORAGE DESC
+- **CHGHYSSTS** — CHANGE HYPERSWAP STATUS
+- **CHGICFDEVE** — Modifier unité de fichier ICF
+- **CHGICFF** — Modifier un fichier ICF
+- **CHGIMGCLG** — Modifier catalogue d'images
+- **CHGIMGCLGE** — Modif poste catalogue d'images
+- **CHGIPLA** — Modifier les attributs d'IPL
+- **CHGIPSIFC** — CHANGE IP OVER SNA INTERFACE
+- **CHGIPSLOC** — CHANGE IP OVER SNA LOCATION
+- **CHGIPSTOS** — CHANGE IP OVER SNA TOS
+- **CHGJOB** — Modifier un travail
+- **CHGJOBD** — Modifier description travail
+- **CHGJOBJS** — Modifier un travail JS
+- **CHGJOBMLBA** — Modifier attributs travail MLB
+- **CHGJOBQ** — Modifier file de travaux
+- **CHGJOBQE** — Modifier poste file de travaux
+- **CHGJOBSCDE** — Modifier poste planning travx
+- **CHGJOBTYP** — Change Job Type
+- **CHGJRN** — Modifier un journal
+- **CHGJRNA** — Modif attributs de journal
+- **CHGJRNOBJ** — Modifier objet journalisé
+- **CHGKBDMAP** — Modifier table de clavier 3270
+- **CHGKRBPWD** — Change Kerberos Password
+- **CHGLANADPI** — Modifier info adaptateur LAN
+- **CHGLF** — Modifier un fichier logique
+- **CHGLFM** — Modifier membre fich logique
+- **CHGLIB** — Modifier une bibliothèque
+- **CHGLIBL** — Modifier liste bibliothèques
+- **CHGLICCRQA** — CHANGE LICENSE CRQ ACTIVITY
+- **CHGLICINF** — Modifier informations licence
+- **CHGLINASC** — Modifier une ligne asynchrone
+- **CHGLINBSC** — Modifier une ligne BSC
+- **CHGLINDDI** — CHANGE LINE DESC (DDI)
+- **CHGLINETH** — Modifier une ligne Ethernet
+- **CHGLINFAX** — CHANGE LINE DESC (FAX)
+- **CHGLINFR** — CHANGE LINE DESC (FRAME RELAY)
+- **CHGLINPPP** — Modifier une ligne PPP
+- **CHGLINSDLC** — CHANGE LINE DESC (SDLC)
+- **CHGLINTDLC** — CHANGE LINE DESC (TDLC)
+- **CHGLINTRN** — CHANGE LINE DESC (TOKEN-RING)
+- **CHGLINWLS** — CHANGE LINE DESC (WIRELESS)
+- **CHGLINX25** — CHANGE LINE DESC (X.25)
+- **CHGLNKLBRM** — Change Link List
+- **CHGLPDA** — Change LPD Attributes
+- **CHGMEDBRM** — Change Media using BRM
+- **CHGMGDSYSA** — CHANGE MANAGED SYSTEM ATR
+- **CHGMGRSRVA** — CHANGE MANAGER SERVICES ATR
+- **CHGMGTCOL** — Modifier collecte de gestion
+- **CHGMNU** — Modifier un menu
+- **CHGMOD** — Modifier un module
+- **CHGMODD** — Modifier description de mode
+- **CHGMSGD** — Modifier description message
+- **CHGMSGF** — Modifier fichier message
+- **CHGMSGQ** — Modifier une file de messages
+- **CHGNCK** — Modifier un alias
+- **CHGNETA** — Modifier les attributs réseau
+- **CHGNETJOBE** — Modifier poste travaux réseau
+- **CHGNFSEXP** — Modifier exportations NFS
+- **CHGNFYJS** — Modifier commande notification
+- **CHGNODGRPA** — Modifier attributs gpe noeuds
+- **CHGNTBD** — Modifier description NetBIOS
+- **CHGNTPA** — Change SNTP Attributes
+- **CHGNWIFR** — CHANGE NETWORK INTERFACE (FR)
+- **CHGNWSA** — Modifier attributs serveur
+- **CHGNWSCFG** — Modifier config serv réseau
+- **CHGNWSD** — Modifier desc serveur réseau
+- **CHGNWSSTG** — Modifier esp stock serveur rés
+- **CHGNWSUSRA** — Modifier attrib util serveur
+- **CHGOBJAUD** — Modifier l'audit d'objet
+- **CHGOBJCRQA** — CHANGE OBJECT CRQ ACTIVITY
+- **CHGOBJD** — Modifier description d'objet
+- **CHGOBJOWN** — Modifier propriétaire d'objet
+- **CHGOBJPGP** — Modifier groupe princ d'objet
+- **CHGOPTA** — Modifier attributs optiques
+- **CHGOPTVOL** — Modifier un volume optique
+- **CHGOSPFA** — Change OSPF Attributes
+- **CHGOSPFARA** — Change OSPF Area
+- **CHGOSPFIFC** — Change OSPF Interface
+- **CHGOSPFLNK** — Change OSPF Virtual Link
+- **CHGOSPFRNG** — Change OSPF Range
+- **CHGOUTQ** — Modifier une file de sortie
+- **CHGOWN** — Modifier le propriétaire
+- **CHGPCOPRF** — Modifier profil Intégrateur PC
+- **CHGPDGPRF** — Change PDG Profile
+- **CHGPDMDFT** — Modifier val par défaut de PDM
+- **CHGPEXDFN** — Change PEX Definition
+- **CHGPF** — Modifier un fichier physique
+- **CHGPFCST** — Modifier contrainte fich phys
+- **CHGPFM** — Modifier membre fich physique
+- **CHGPFTRG** — Change PF Trigger
+- **CHGPGM** — Modifier un programme
+- **CHGPGMVAR** — Modifier variable de programme
+- **CHGPGP** — Modifier le groupe principal
+- **CHGPGRJS** — Modifier cde de téléappel JS
+- **CHGPJ** — Modifier le travail anticipé
+- **CHGPJE** — Modifier poste trav anticipés
+- **CHGPLDOND** — CHANGE POLICY LEVEL DATE
+- **CHGPOPA** — Change POP Server Attributes
+- **CHGPRB** — Modifier un incident
+- **CHGPRBACNE** — Modifier poste action incident
+- **CHGPRBSLTE** — Modifier poste sélect incident
+- **CHGPRDCRQA** — CHANGE PRODUCT CRQ ACTIVITY
+- **CHGPRDOBJD** — Change Product Object Desc
+- **CHGPRF** — Modifier son profil
+- **CHGPRTF** — Modifier un fichier imprimante
+- **CHGPRXCMD** — Modifier commande proxy
+- **CHGPSFCFG** — Modifier configuration PSF
+- **CHGPTFCRQA** — CHANGE PTF CRQ ACTIVITY
+- **CHGPTR** — Modifier un pointeur
+- **CHGPWD** — Modifier son mot de passe
+- **CHGPWRSCD** — Modifier planning mise ST/HT
+- **CHGPWRSCDE** — Modifier poste planning ST/HT
+- **CHGQRYA** — Modifier attributs de requête
+- **CHGQSTDB** — Modifier base de données Q&R
+- **CHGRCYAP** — Modifier rétabl chemins accès
+- **CHGRDBDIRE** — Modifier poste répertoire RDB
+- **CHGRIPA** — Change RIP Attributes
+- **CHGRIPFLT** — Change RIP Filter
+- **CHGRIPIFC** — Change RIP Interface
+- **CHGRJECMNE** — CHANGE RJE COMMUNICATION ENTRY
+- **CHGRJERDRE** — CHANGE RJE READER ENTRY
+- **CHGRJEWTRE** — CHANGE RJE WRITER ENTRY
+- **CHGRMTDFN** — Modifier définition éloignée
+- **CHGRMTJRN** — Modifier un journal éloigné
+- **CHGRPYLE** — Modifier poste liste réponse
+- **CHGRSCCRQA** — CHANGE RESOURCE CRQ ACTIVITY
+- **CHGRTDA** — Change RouteD Attributes
+- **CHGRTGE** — Modifier un poste de routage
+- **CHGRWSPWD** — Modifier mot de passe ctrl RWS
+- **CHGRXCA** — Change REXEC Attributes
+- **CHGS36** — CHANGE S/36 CONFIGURATION
+- **CHGS36A** — CHANGE S/36 ENVIRONMENT ATTR
+- **CHGS36MSGL** — CHANGE S/36 MESSAGE LIST
+- **CHGS36PGMA** — Modifier attributs de pgm 36
+- **CHGS36PRCA** — Modifier attributs de proc 36
+- **CHGS36SRCA** — Modifier attributs source 36
+- **CHGSAVF** — Modifier un fichier sauvegarde
+- **CHGSBSD** — Modifier descr de sous-système
+- **CHGSCDBRM** — Change Job Scheduler
+- **CHGSCHIDX** — Modifier un index d'aide
+- **CHGSDSTL** — Change SMTP Dist List
+- **CHGSECA** — Modifier attributs de sécurité
+- **CHGSECAUD** — Modifier audit de sécurité
+- **CHGSHRPOOL** — Modifier pool mémoire partagé
+- **CHGSMTPA** — Change SMTP Attributes
+- **CHGSMTPRLE** — Change Remote Login Entry
+- **CHGSNMPA** — Change SNMP Attributes
+- **CHGSPLFA** — Modifier attributs fich spoule
+- **CHGSRCPF** — Modifier un fichier source
+- **CHGSRVA** — Modifier attributs maintenance
+- **CHGSRVAGT** — Modifier Service Agent
+- **CHGSRVAGTA** — Modifier attrib Service Agent
+- **CHGSRVCFG** — Modifier config de maintenance
+- **CHGSRVPGM** — Modifier programme de service
+- **CHGSRVPVDA** — CHANGE SERVICE PROVIDER ATTR
+- **CHGSSND** — CHANGE SESSION DESCRIPTION
+- **CHGSSNMAX** — Modifier maximum de sessions
+- **CHGSSTSECA** — Modifier attributs sécurit SST
+- **CHGSSTUSR** — Modifier ID util outils maint
+- **CHGSVCCPYD** — CHANGE SVC COPY DESCRIPTION
+- **CHGSVCSSN** — CHANGE SVC SESSION
+- **CHGSVRAUTE** — Modifier poste authent serveur
+- **CHGSYSDIRA** — Modifier attributs répertoire
+- **CHGSYSJOB** — Modifier un travail système
+- **CHGSYSLIBL** — Modifier liste biblio système
+- **CHGSYSVAL** — Modifier une valeur système
+- **CHGTAPCTG** — Modifier cartouche de bande
+- **CHGTAPF** — Modifier un fichier bande
+- **CHGTCPA** — Change TCP/IP Attributes
+- **CHGTCPDMN** — Change TCP/IP Domain
+- **CHGTCPHTE** — Change TCP/IP Host Table Entry
+- **CHGTCPIFC** — Change TCP/IP Interface
+- **CHGTCPRTE** — Change TCP/IP Route
+- **CHGTCPSVR** — Change TCP/IP Server
+- **CHGTELNA** — Change Telnet Attributes
+- **CHGTFTPA** — Change TFTP Attributes
+- **CHGTGTEML** — CHANGE TARGET EMULATION
+- **CHGTIMZON** — Modifier descr fuseau horaire
+- **CHGUSRAUD** — Modifier audit d'utilisateur
+- **CHGUSRPRF** — Modifier un profil utilisateur
+- **CHGUSRPRTI** — Modifier info impression util
+- **CHGUSRSMTP** — Change User SMTP
+- **CHGUSRSNMP** — Change User for SNMP
+- **CHGUSRTRC** — Change User Trace
+- **CHGVACSNMP** — Change VACM for SNMP
+- **CHGVAR** — Modifier une variable
+- **CHGVTMAP** — Change VT Keyboard Map
+- **CHGWLCGRP** — Modifier gpe charge de travail
+- **CHGWSE** — Modifier un poste écran
+- **CHGWTR** — Modifier un éditeur de spoule
+
+## CHK — Verifier (19 commandes)
+
+- **CHKASPBAL** — Vérifier l'équilibrage ASP
+- **CHKCMNTRC** — Check Communications Trace
+- **CHKDKT** — Vérifier existence disquette
+- **CHKDLO** — Vérifier existence doc ou doss
+- **CHKDNSCFG** — Check DNS Configuration
+- **CHKDNSZNE** — Check DNS Zone
+- **CHKEXPBRM** — Check Expired Media for BRM
+- **CHKIGCTBL** — Check DBCS Font Table
+- **CHKIN** — Libérer un objet
+- **CHKMSTKVV** — Check Master KVV
+- **CHKOBJ** — Vérifier existence d'un objet
+- **CHKOBJITG** — Vérifier intégrité des objets
+- **CHKOPTVOL** — Vérifier un volume optique
+- **CHKOUT** — Verrouiller un objet
+- **CHKPFRCOL** — Vérifier collecte de perf
+- **CHKPRDOPT** — Vérifier option de produit
+- **CHKPWD** — Vérifier le mot de passe
+- **CHKRCDLCK** — Vérifier verrouillages d'enreg
+- **CHKTAP** — Vérifier existence sur bande
+
+## CLR — Mettre a blanc (11 commandes)
+
+- **CLRDKT** — Mettre à blanc une disquette
+- **CLRJOBQ** — Mettre à blanc file de travaux
+- **CLRLIB** — Mettre à blanc bibliothèque
+- **CLRMSGQ** — Mettre à blanc file de message
+- **CLRMSTKEY** — Clear Master Key
+- **CLROUTQ** — Mettre à blanc file de sortie
+- **CLRPFM** — Mettre à blanc membre fichier
+- **CLRPOOL** — Mettre à blanc un pool
+- **CLRSAVF** — Mettre à blanc fich sauvegarde
+- **CLRSVRSEC** — Mettre à blc données sécurité
+- **CLRTRCDTA** — Mettre à blanc résultats trace
+
+## CMP — Comparer (2 commandes)
+
+- **CMPJRNIMG** — Comparer des images de journal
+- **CMPPFM** — Comparer membre fich physique
+
+## CPY — Copier (46 commandes)
+
+- **CPY** — Copier un objet
+- **CPYAUDJRNE** — Copier postes journal d'audit
+- **CPYCFGL** — Copier liste de configuration
+- **CPYDOC** — Copier un document
+- **CPYDSTRPSO** — COPY DST REPOSITORY OBJECT
+- **CPYF** — Copier un fichier
+- **CPYFCNARA** — Copy Functional Area
+- **CPYFRMARCF** — Copier depuis fichier archive
+- **CPYFRMDIR** — Copier à partir du répertoire
+- **CPYFRMDKT** — Copier à partir de disquette
+- **CPYFRMIMPF** — Copier depuis fich importation
+- **CPYFRMLDIF** — Copy From LDIF
+- **CPYFRMMSD** — Copy From Main Storage Dump
+- **CPYFRMPCD** — Copier à partir de document PC
+- **CPYFRMPCFF** — Copy From PCF File
+- **CPYFRMQRYF** — Copier depuis fichier requête
+- **CPYFRMSTMF** — Copier depuis fichier STREAM
+- **CPYFRMTAP** — Copier à partir d'une bande
+- **CPYGPHFMT** — Copy Graph Format
+- **CPYGPHPKG** — Copy Graph Package
+- **CPYIGCSRT** — Copy DBCS Master Sort Table
+- **CPYIGCTBL** — Copy DBCS Font Table
+- **CPYJOBJS** — Copier un travail JS
+- **CPYLIB** — Copier une bibliothèque
+- **CPYMEDIBRM** — Copy Media Info for BRM
+- **CPYOPT** — Copier un volume optique
+- **CPYPFRCOL** — Copy Performance Collection
+- **CPYPFRDTA** — Copy Performance Data
+- **CPYPTF** — Copier des PTF
+- **CPYPTFCVR** — Copier lettre d'accompagnement
+- **CPYPTFGRP** — Copier groupe de PTF
+- **CPYPTFSAVF** — Copier PTF ds fich sauveg
+- **CPYSPLF** — Copier un fichier spoule
+- **CPYSRCF** — Copier un fichier source
+- **CPYTCPHT** — Copy TCP/IP Host Table
+- **CPYTOARCF** — Copier dans fichier archive
+- **CPYTODIR** — Copier dans le répertoire
+- **CPYTODKT** — Copier sur une disquette
+- **CPYTOIMPF** — Copier dans fich importation
+- **CPYTOLDIF** — Copy To LDIF
+- **CPYTOMSD** — Copy To Main Storage Dump
+- **CPYTOPCD** — Copier dans un document PC
+- **CPYTOPCFF** — Copy To PCF File
+- **CPYTOSTMF** — Copier dans fichier STREAM
+- **CPYTOTAP** — Copier sur une bande
+- **CPYVPNCFGF** — Copy VPN Configuration File
+
+## CRT — Creer (193 commandes)
+
+- **CRTAFPDTA** — CREATE AFP DATA
+- **CRTALRTBL** — Créer une table d'alertes
+- **CRTAPW** — CREATE FORM DESCRIPTION
+- **CRTAUTHLR** — Créer un dépositaire de droits
+- **CRTAUTL** — Créer une liste d'autorisation
+- **CRTBNDC** — Create Bound C Program
+- **CRTBNDCBL** — Create Bound COBOL Program
+- **CRTBNDCL** — Create Bound CL Program
+- **CRTBNDCPP** — Create Bound C++ Program
+- **CRTBNDDIR** — Créer un répertoire de liage
+- **CRTBNDRPG** — Create Bound RPG Program
+- **CRTCAD** — CREATE CLUSTER ADMIN DOMAIN
+- **CRTCBLMOD** — Create COBOL Module
+- **CRTCBLPGM** — Créer un programme COBOL
+- **CRTCCARPT** — Generate Code Coverage Report
+- **CRTCFGL** — Créer liste de configuration
+- **CRTCICSC** — CREATE CICS ILE C OBJECT
+- **CRTCICSCBL** — CREATE CICS PROGRAM
+- **CRTCICSGRP** — CREATE CICS GROUP
+- **CRTCICSMAP** — CREATE CICS MAP
+- **CRTCKMKSF** — Create Keystore File
+- **CRTCLD** — Create C Locale Description
+- **CRTCLMOD** — Create CL Module
+- **CRTCLPGM** — Créer un programme CL
+- **CRTCLS** — Créer une classe
+- **CRTCLU** — CREATE CLUSTER
+- **CRTCMD** — Create Command
+- **CRTCMOD** — Create C Module
+- **CRTCOSD** — Créer une classe de service
+- **CRTCPPMOD** — Create C++ Module
+- **CRTCRG** — CREATE CLUSTER RESOURCE GROUP
+- **CRTCRGCNR** — CREATE CRG CONTAINER
+- **CRTCRQD** — Create CRQ Description
+- **CRTCSI** — Create Comm Side Information
+- **CRTCTLAPPC** — Créer un contrôleur APPC
+- **CRTCTLASC** — Créer un contrôleur asynchrone
+- **CRTCTLBSC** — Créer un contrôleur BSC
+- **CRTCTLFNC** — CREATE CTL DESC (FINANCE)
+- **CRTCTLHOST** — Créer un contrôleur hôte SNA
+- **CRTCTLLWS** — Créer ctl de postes en local
+- **CRTCTLNET** — Créer un contrôleur réseau
+- **CRTCTLRTL** — CREATE CTL DESC (RETAIL)
+- **CRTCTLRWS** — CREATE CTL DESC (REMOTE WS)
+- **CRTCTLTAP** — Créer un contrôleur bande
+- **CRTCTLVWS** — Créer ctl de postes virtuels
+- **CRTDDMF** — Créer un fichier DDM
+- **CRTDDNSCFG** — Create DDNS Configuration
+- **CRTDEVAPPC** — Créer une unité APPC
+- **CRTDEVASC** — Créer une unité asynchrone
+- **CRTDEVASP** — Créer desc unité (ASP)
+- **CRTDEVBSC** — Créer une unité BSC
+- **CRTDEVCRP** — Créer unité de chiffrement
+- **CRTDEVDKT** — Créer une unité disquette
+- **CRTDEVDSP** — Créer une unité écran
+- **CRTDEVFNC** — CREATE DEVICE DESC (FINANCE)
+- **CRTDEVHOST** — Créer une unité hôte SNA
+- **CRTDEVINTR** — Créer une unité INTRA
+- **CRTDEVMLB** — Créer une unité médiathèque
+- **CRTDEVNET** — Créer une unité réseau
+- **CRTDEVNWSH** — Créer une unité NWSH
+- **CRTDEVOPT** — Créer une unité optique
+- **CRTDEVPRT** — Créer une unité imprimante
+- **CRTDEVRTL** — CREATE DEVICE DESC (RETAIL)
+- **CRTDEVSNPT** — Créer une unité SNPT
+- **CRTDEVSNUF** — Créer une unité SNUF
+- **CRTDEVTAP** — Créer une unité bande
+- **CRTDFUDSPF** — Créer un fichier écran DFU
+- **CRTDIR** — Créer un répertoire
+- **CRTDKTF** — Créer un fichier disquette
+- **CRTDOC** — Créer un document
+- **CRTDSPF** — Créer un fichier écran
+- **CRTDSTL** — Créer une liste de diffusion
+- **CRTDTAARA** — Créer une zone de données
+- **CRTDTADCT** — Créer dictionnaire de données
+- **CRTDTAQ** — Créer une file de données
+- **CRTDUPOBJ** — Créer un objet dupliqué
+- **CRTEDTD** — Créer description d'édition
+- **CRTFCNARA** — Create Functional Area
+- **CRTFCT** — CREATE FORMS CONTROL TABLE
+- **CRTFLR** — Créer un dossier
+- **CRTFMWPRD** — Créer un microprogramme
+- **CRTFNTRSC** — Créer une ressource police
+- **CRTFNTTBL** — Créer une table de polices
+- **CRTFORMDF** — Créer une définition d'imprimé
+- **CRTFTR** — Créer un filtre
+- **CRTGDF** — CREATE GRAPHICS DATA FILE
+- **CRTGPHFMT** — Create Graph Format
+- **CRTGPHPKG** — Create Graph Package
+- **CRTGSS** — Créer un jeu de symboles graph
+- **CRTHSTDTA** — Create Historical Data
+- **CRTICFF** — Créer un fichier ICF
+- **CRTIGCDCT** — Create DBCS Conversion Dict
+- **CRTIMGCLG** — Créer catalogue images CD-ROM
+- **CRTINSTOND** — CREATE INSTANCE
+- **CRTJOBD** — Créer description de travail
+- **CRTJOBQ** — Créer une file de travaux
+- **CRTJRN** — Créer un journal
+- **CRTJRNRCV** — Créer un récepteur de journal
+- **CRTKPF** — CREATE FORM
+- **CRTLF** — Créer un fichier logique
+- **CRTLIB** — Créer une bibliothèque
+- **CRTLINASC** — Créer une ligne asynchrone
+- **CRTLINBSC** — Créer une ligne BSC
+- **CRTLINDDI** — CREATE LINE DESC (DDI)
+- **CRTLINETH** — Créer une ligne Ethernet
+- **CRTLINFAX** — CREATE LINE DESC (FAX)
+- **CRTLINFR** — CREATE LINE DESC (FRAME RELAY)
+- **CRTLINPPP** — Créer une ligne PPP
+- **CRTLINSDLC** — CREATE LINE DESC (SDLC)
+- **CRTLINTDLC** — CREATE LINE DESC (TDLC)
+- **CRTLINTRN** — CREATE LINE DESC (TOKEN-RING)
+- **CRTLINWLS** — CREATE LINE DESC (WIRELESS)
+- **CRTLINX25** — CREATE LINE DESC (X.25)
+- **CRTLOCALE** — Créer un environnement local
+- **CRTMNU** — Créer un menu
+- **CRTMODD** — Créer une description de mode
+- **CRTMSGF** — Créer un fichier message
+- **CRTMSGFMNU** — CREATE MENU FROM MSG FILES
+- **CRTMSGQ** — Créer une file de messages
+- **CRTNODGRP** — Créer groupe de noeuds
+- **CRTNODL** — Create Node List
+- **CRTNTBD** — Créer une description NetBIOS
+- **CRTNWIFR** — CREATE NETWORK INTERFACE (FR)
+- **CRTNWSCFG** — Créer config serveur de réseau
+- **CRTNWSD** — Créer desc de serveur réseau
+- **CRTNWSSTG** — Créer espace stockage serveur
+- **CRTOUTQ** — Créer une file de sortie
+- **CRTOVL** — Créer un fond de page
+- **CRTPAGDFN** — Créer une définition de page
+- **CRTPAGSEG** — Créer un segment de page
+- **CRTPDFMAP** — CREATE PDF MAP
+- **CRTPDG** — Create Print Descriptor Group
+- **CRTPEXDTA** — Create PEX Data
+- **CRTPF** — Créer un fichier physique
+- **CRTPFRDTA** — Créer données de performances
+- **CRTPFRSUM** — Créer récap de performances
+- **CRTPGM** — Créer un programme
+- **CRTPNLGRP** — Créer un groupe de panneaux
+- **CRTPPW** — CREATE FORM DESCRIPTION
+- **CRTPRDDFN** — Create Product Definition
+- **CRTPRDLOD** — Create Product Load
+- **CRTPRTF** — Créer un fichier imprimante
+- **CRTPRXCMD** — Créer commande proxy
+- **CRTPSFCFG** — Créer une configuration PSF
+- **CRTPTF** — Create Program Temporary Fix
+- **CRTPTFPKG** — Create PTF Package
+- **CRTQMFORM** — Create Query Management Form
+- **CRTQMQRY** — Create Query Management Query
+- **CRTQSTDB** — Créer une base de données Q&R
+- **CRTQSTLOD** — Créer un chargement de Q&R
+- **CRTRJEBSCF** — CREATE RJE BSC FILE
+- **CRTRJECFG** — CREATE RJE CONFIGURATION
+- **CRTRJECMNF** — CREATE RJE COMMUNICATION FILE
+- **CRTRNDCCFG** — Create RNDC Configuration
+- **CRTRPGMOD** — Create RPG Module
+- **CRTRPGPGM** — Créer un programme RPG/400
+- **CRTRPTPGM** — Créer pgm RPG d'auto-édition
+- **CRTS36APWF** — CREATE S/36 APW WORK FILE
+- **CRTS36CBL** — Créer un programme COBOL 36
+- **CRTS36DSPF** — CREATE S/36 DISPLAY FILE
+- **CRTS36MNU** — CREATE S/36 MENU
+- **CRTS36MSGF** — CREATE S/36 MESSAGE FILE
+- **CRTS36RPG** — Création d'un programme RPG II
+- **CRTS36RPGR** — Créer fichier écran console
+- **CRTS36RPT** — Créer pgm RPG II 36 auto-édit
+- **CRTSAVF** — Créer un fichier sauvegarde
+- **CRTSBSD** — Créer description sous-système
+- **CRTSCHIDX** — Créer un index d'aide
+- **CRTSDSTL** — Create SMTP Dist List
+- **CRTSPADCT** — Créer un dictionnaire orthogr
+- **CRTSQLCBL** — Créer un programme COBOL SQL
+- **CRTSQLCBLI** — Créer un objet COBOL ILE SQL
+- **CRTSQLCI** — Créer un objet C ILE SQL
+- **CRTSQLCPPI** — Créer un objet C++ ILE SQL
+- **CRTSQLPKG** — Créer un module SQL
+- **CRTSQLPLI** — Créer un programme PL/I SQL
+- **CRTSQLRPG** — Créer un programme SQL RPG
+- **CRTSQLRPGI** — Créer un objet RPG ILE SQL
+- **CRTSRCPF** — Créer un fichier source
+- **CRTSRVCFG** — Créer config de maintenance
+- **CRTSRVPGM** — Créer un programme de service
+- **CRTSSND** — CREATE SESSION DESCRIPTION
+- **CRTSSTUSR** — Créer ID util outils maint
+- **CRTTAPCGY** — Créer une catégorie de bande
+- **CRTTAPF** — Créer un fichier bande
+- **CRTTBL** — Créer une table
+- **CRTTIMZON** — Créer descript fuseau horaire
+- **CRTUDFS** — Créer système fichiers util
+- **CRTUSRPRF** — Créer un profil utilisateur
+- **CRTVLDL** — Créer une liste de validation
+- **CRTWQPWD** — CREATE WEB QUERY PASSWORD
+- **CRTWQSYN** — CREATE DB2 WEB QUERY SYNONYM
+- **CRTWSCST** — Create WSCST
+
+## CVT — Convertir (24 commandes)
+
+- **CVTAPWSYM** — CONVERT APW SYMBOL
+- **CVTCLSRC** — Convertir un source CL 38
+- **CVTDAT** — Convertir le format de date
+- **CVTDIR** — Convertir répertoire
+- **CVTDLSNAM** — Convertir un nom DLS
+- **CVTEDU** — Convertir la formation
+- **CVTFNTAFP** — CONVERT FONT
+- **CVTIPSIFC** — CONVERT IP ADDRESS
+- **CVTIPSLOC** — CONVERT NETWORK ID / LOCATION
+- **CVTNAMSMTP** — Convert SMTP Names
+- **CVTOPTBKU** — Convertir volume opt de sauveg
+- **CVTPFRCOL** — Convert Performance Collection
+- **CVTPFRDTA** — Convertir données performance
+- **CVTPFRTHD** — Convertir données perf exéc
+- **CVTRJEDTA** — CONVERT RJE DATA
+- **CVTRPCSRC** — Convertir source RPC
+- **CVTRPGSRC** — Convertir source RPG
+- **CVTS36APWD** — CONVERT S/36 APW FORMD
+- **CVTS36APWF** — CONVERT S/36 SYMBOL FILE
+- **CVTS36KPFD** — CONVERT S/36 KPF FORMD
+- **CVTS36PFCF** — CONVERT S/36 PFC FONT FILE
+- **CVTTCPCL** — CONVERT TCP/IP CL SOURCE
+- **CVTTOFLR** — Convertir en dossier
+- **CVTUSRCERT** — Convertir certif utilisateur
+
+## DCL (3 commandes)
+
+- **DCL** — Déclarer une variable CL
+- **DCLF** — Déclarer un fichier
+- **DCLPRCOPT** — Déclarer options de traitement
+
+## DLT — Supprimer (130 commandes)
+
+- **DLTALR** — Supprimer alerte
+- **DLTALRTBL** — Supprimer une table d'alertes
+- **DLTAPARDTA** — Delete APAR Data
+- **DLTAUTCOL** — Supprimer collecte des droits
+- **DLTAUTHLR** — Supprimer dépositaire de droit
+- **DLTAUTL** — Supprimer liste d'autorisation
+- **DLTBNDDIR** — Supprimer répertoire de liage
+- **DLTCAD** — DELETE CLUSTER ADMIN DOMAIN
+- **DLTCFGL** — Supprimer liste configuration
+- **DLTCHTFMT** — DELETE CHART FORMAT
+- **DLTCICSGRP** — DELETE CICS GROUP
+- **DLTCLD** — Delete C Locale Description
+- **DLTCLS** — Supprimer une classe
+- **DLTCLU** — DELETE CLUSTER
+- **DLTCMD** — Supprimer une commande
+- **DLTCMNTRC** — Delete Communications Trace
+- **DLTCNNL** — Supprimer liste de connexion
+- **DLTCOSD** — Supprimer classe de service
+- **DLTCRG** — Delete Cluster Resource Group
+- **DLTCRGCLU** — DELETE CRG CLUSTER
+- **DLTCRGCNR** — DELETE CRG CONTAINER
+- **DLTCRQD** — Delete CRQ Description
+- **DLTCSI** — Delete Comm Side Information
+- **DLTCTLD** — Supprimer descr de contrôleur
+- **DLTDEVD** — Supprimer description d'unité
+- **DLTDEVMLB** — Supprimer unité médiathèque
+- **DLTDFUPGM** — Supprimer un programme DFU
+- **DLTDKTLBL** — Supprimer fich sur disquette
+- **DLTDLO** — Supprimer document ou dossier
+- **DLTDOCL** — Supprimer liste de documents
+- **DLTDST** — Supprimer une distribution
+- **DLTDSTL** — Supprimer liste de diffusion
+- **DLTDTAARA** — Supprimer une zone de données
+- **DLTDTADCT** — Supprimer dictionnaire données
+- **DLTDTAQ** — Supprimer une file de données
+- **DLTEDTD** — Supprimer description édition
+- **DLTEXPSPLF** — Supprimer fich spoule périmés
+- **DLTF** — Supprimer un fichier
+- **DLTFCNARA** — Delete Functional Area
+- **DLTFCT** — DELETE FORMS CONTROL TABLE
+- **DLTFNTRSC** — Supprimer ressource police
+- **DLTFNTTBL** — Supprimer une table de polices
+- **DLTFORMDF** — Supprimer définition d'imprimé
+- **DLTFTR** — Supprimer un filtre
+- **DLTGPHFMT** — Delete Graph Format
+- **DLTGPHPKG** — Delete Graph Package
+- **DLTGSS** — Supprimer jeu symboles graph
+- **DLTHSTDTA** — Delete Historical Data
+- **DLTIGCDCT** — Delete DBCS Conversion Dict
+- **DLTIGCSRT** — Delete DBCS Sort Table
+- **DLTIGCTBL** — Delete DBCS Font Table
+- **DLTIMGCLG** — Supprimer catalogue d'images
+- **DLTINTSVR** — DELETE INTEGRATED SERVER
+- **DLTIPXD** — Delete IPX Description
+- **DLTJOBD** — Supprimer description travail
+- **DLTJOBQ** — Supprimer une file de travaux
+- **DLTJRN** — Supprimer un journal
+- **DLTJRNRCV** — Supprimer récepteur de journal
+- **DLTKRBCCF** — Delete Credentials Cache File
+- **DLTLIB** — Supprimer une bibliothèque
+- **DLTLICPGM** — Supprimer logiciel ss/licence
+- **DLTLIND** — Supprimer description de ligne
+- **DLTLNXSVR** — DELETE LINUX SERVER
+- **DLTLOCALE** — Supprimer environnement local
+- **DLTMEDDFN** — Supprimer définition support
+- **DLTMGTCOL** — Supprimer collecte de gestion
+- **DLTMNU** — Supprimer un menu
+- **DLTMOD** — Supprimer un module
+- **DLTMODD** — Supprimer description de mode
+- **DLTMSGF** — Supprimer fichier message
+- **DLTMSGQ** — Supprimer une file de messages
+- **DLTNETF** — Supprimer un fichier du réseau
+- **DLTNODGRP** — Supprimer groupe de noeuds
+- **DLTNODL** — Delete Node List
+- **DLTNTBD** — Supprimer description NetBIOS
+- **DLTNWID** — Supprimer interface de réseau
+- **DLTNWSCFG** — Supprimer config serv réseau
+- **DLTNWSD** — Supprimer desc serveur réseau
+- **DLTNWSSTG** — Supprimer espace stockage serv
+- **DLTOBJ** — Supprimer l'objet
+- **DLTOUTQ** — Supprimer une file de sortie
+- **DLTOVL** — Supprimer un fond de page
+- **DLTOVR** — Supprimer une substitution
+- **DLTOVRDEVE** — Supprimer substitutions unités
+- **DLTPAGDFN** — Supprimer définition de page
+- **DLTPAGSEG** — Supprimer un segment de page
+- **DLTPDFMAP** — Supprimer la mappe PDF
+- **DLTPDG** — Delete Print Descriptor Group
+- **DLTPEXDTA** — Delete PEX Data
+- **DLTPFRCOL** — Delete Performance Collection
+- **DLTPFRDTA** — Delete Performance Data
+- **DLTPGM** — Supprimer un programme
+- **DLTPNLGRP** — Supprimer groupe de panneaux
+- **DLTPRB** — Supprimer enreg d'incident
+- **DLTPRDDFN** — Delete Product Definition
+- **DLTPRDLOD** — Delete Product Load
+- **DLTPSFCFG** — Supprimer configuration PSF
+- **DLTPTF** — Supprimer une PTF
+- **DLTQMFORM** — Supprimer un format QM
+- **DLTQMQRY** — Supprimer une requête QM
+- **DLTQRY** — Supprimer une analyse
+- **DLTQST** — Supprimer Questions & Réponses
+- **DLTQSTDB** — Supprimer base de données Q&R
+- **DLTRJECFG** — DELETE RJE CONFIGURATION
+- **DLTRMTPTF** — DELETE REMOTE PTF
+- **DLTSBMCRQ** — DELETE SUBMITTED CRQ
+- **DLTSBSD** — Supprimer desc de sous-système
+- **DLTSCHIDX** — Supprimer index d'aide
+- **DLTSDSTL** — Delete SMTP Dist List
+- **DLTSMGOBJ** — DELETE SMG OBJECT
+- **DLTSPADCT** — Supprimer dictionnaire orthogr
+- **DLTSPLF** — Supprimer un fichier spoule
+- **DLTSQLPKG** — Supprimer un module SQL
+- **DLTSRVCFG** — Supprimer config maintenance
+- **DLTSRVPGM** — Supprimer programme de service
+- **DLTSSND** — DELETE SESSION DESCRIPTION
+- **DLTSSTUSR** — Supprimer ID util outils maint
+- **DLTTAPCGY** — Supprimer catégorie de bande
+- **DLTTBL** — Supprimer une table
+- **DLTTIMZON** — Supprimer descr fuseau horaire
+- **DLTTRC** — Delete Trace
+- **DLTUDFS** — Supprimer syst fichiers util
+- **DLTUSRIDX** — Delete User Index
+- **DLTUSRPRF** — Supprimer profil utilisateur
+- **DLTUSRQ** — Delete User Queue
+- **DLTUSRSPC** — Delete User Space
+- **DLTUSRTRC** — Delete User Trace
+- **DLTVLDL** — Supprimer liste de validation
+- **DLTWNTSVR** — DELETE WINDOWS SERVER
+- **DLTWSCST** — Delete WSCST
+
+## DMP — Clicher/Dump (17 commandes)
+
+- **DMP** — Clicher un objet
+- **DMPBRM** — Dump BRMS
+- **DMPCICS** — DUMP CICS
+- **DMPCLPGM** — Clicher le programme CL
+- **DMPCLUTRC** — Dump Cluster Trace
+- **DMPCMNTRC** — Dump Communications Trace
+- **DMPDLO** — Clicher un document ou dossier
+- **DMPDNSJRNF** — Dump DNS Journal File
+- **DMPJOB** — Clicher le travail
+- **DMPJOBINT** — Clicher l'interne du travail
+- **DMPMEMINF** — Dump Main Memory Information
+- **DMPOBJ** — Clicher un objet
+- **DMPSYSOBJ** — Clicher un objet système
+- **DMPTAP** — Clicher une bande
+- **DMPTRC** — Clicher la trace
+- **DMPUSRPRF** — Profil utilisateur du cliché
+- **DMPUSRTRC** — Dump User Trace
+
+## DSP — Afficher (219 commandes)
+
+- **DSPACC** — Afficher les codes d'accès
+- **DSPACCAUT** — Afficher droits/codes d'accès
+- **DSPACTPJ** — Afficher trav anticipés actifs
+- **DSPACTPRFL** — Afficher liste profils actifs
+- **DSPACTSCD** — Afficher planning activation
+- **DSPAPPNINF** — Afficher informations APPN
+- **DSPASPBRM** — Display ASP Information
+- **DSPASPCPYD** — DISPLAY ASP COPY DESCRIPTION
+- **DSPASPINF** — Afficher les informations ASP
+- **DSPASPSSN** — DISPLAY ASP SESSION
+- **DSPASPSTS** — Afficher état d'ASP
+- **DSPATR** — Afficher attributs
+- **DSPAUDJRNE** — Afficher postes journal audit
+- **DSPAUT** — Afficher les droits
+- **DSPAUTHLR** — Afficher dépositaires droits
+- **DSPAUTL** — Afficher liste d'autorisation
+- **DSPAUTLDLO** — Afficher doc/dos de liste aut
+- **DSPAUTLOBJ** — Afficher objets de liste d'aut
+- **DSPAUTUSR** — Afficher utilisat autorisés
+- **DSPBCKSTS** — Afficher état de sauvegarde
+- **DSPBCKUP** — Afficher options de sauvegarde
+- **DSPBCKUPL** — Afficher liste de sauvegarde
+- **DSPBKP** — Afficher les points d'arrêt
+- **DSPBKUBRM** — Display Backup Plan using BRM
+- **DSPBNDDIR** — Afficher répertoire de liage
+- **DSPCCSA** — DISPLAY CC SERVER ATTRIBUTES
+- **DSPCDEFNT** — Afficher une police codée
+- **DSPCFGL** — Afficher liste configuration
+- **DSPCHT** — DISPLAY CHART
+- **DSPCICSCVT** — DISPLAY CICS CVT
+- **DSPCICSDCT** — DISPLAY CICS DCT
+- **DSPCICSFCT** — DISPLAY CICS FCT
+- **DSPCICSGLT** — DISPLAY CICS GLT
+- **DSPCICSJCT** — DISPLAY CICS JCT
+- **DSPCICSPCT** — DISPLAY CICS PCT
+- **DSPCICSPPT** — DISPLAY CICS PPT
+- **DSPCICSSIT** — DISPLAY CICS SIT
+- **DSPCICSSTS** — DISPLAY CICS STATUS
+- **DSPCICSTCS** — DISPLAY CICS TCS
+- **DSPCICSTCT** — DISPLAY CICS TCT
+- **DSPCICSTST** — DISPLAY CICS TST
+- **DSPCKMKSFE** — Display Keystore File Entry
+- **DSPCLS** — Afficher une classe
+- **DSPCLUINF** — DISPLAY CLUSTER INFORMATION
+- **DSPCMD** — Afficher une commande
+- **DSPCNNL** — Afficher liste de connexion
+- **DSPCNNSTS** — Display Connection Status
+- **DSPCOSD** — Afficher une classe de service
+- **DSPCPCST** — Afficher contrainte à vérifier
+- **DSPCRGCNR** — DISPLAY CRG CONTAINER
+- **DSPCRGINF** — DISPLAY CRG INFORMATION
+- **DSPCSI** — Display Comm Side Information
+- **DSPCSMSSN** — DISPLAY CSM ASP SESSION
+- **DSPCTLD** — Afficher descr de contrôleur
+- **DSPCURDIR** — Afficher répertoire en cours
+- **DSPDBG** — Afficher le débogage
+- **DSPDBGWCH** — Afficher guet de débogage
+- **DSPDBR** — Afficher relations BD
+- **DSPDDMF** — Afficher un fichier DDM
+- **DSPDEVD** — Description d'unité
+- **DSPDIRE** — Afficher postes du répertoire
+- **DSPDKT** — Afficher contenu de disquette
+- **DSPDLFA** — Afficher attributs fichier DL
+- **DSPDLOAUD** — Afficher niveau d'audit DLO
+- **DSPDLOAUT** — Afficher droits sur doc ou dos
+- **DSPDLONAM** — Afficher nom doc ou dossier
+- **DSPDOC** — Afficher un document
+- **DSPDSTCLGE** — DISPLAY DST CATALOG ENTRIES
+- **DSPDSTL** — Afficher liste de diffusion
+- **DSPDSTLOG** — Afficher histo de distribution
+- **DSPDSTSRV** — Afficher services distribution
+- **DSPDTA** — Afficher les données
+- **DSPDTAARA** — Afficher une zone de données
+- **DSPDTADCT** — Afficher dictionnaire données
+- **DSPDUPBRM** — Display Duplicate Media
+- **DSPEDTD** — Afficher description d'édition
+- **DSPEWCBCDE** — Afficher poste code barres EWC
+- **DSPEWCM** — Afficher membre ctl sans fil
+- **DSPEWCPTCE** — Afficher un poste PTC EWC
+- **DSPEWLM** — Afficher membre ligne sans fil
+- **DSPEXPSCD** — Afficher planning péremption
+- **DSPF** — Display File
+- **DSPFCNBRM** — DISPLAY FUNCTION BRMS
+- **DSPFCNUSG** — Afficher utilisation fonction
+- **DSPFD** — Afficher description fichier
+- **DSPFFD** — Afficher description des zones
+- **DSPFLR** — Afficher un dossier
+- **DSPFMWSTS** — Afficher état microprogramme
+- **DSPFNTRSCA** — Afficher attr ressource police
+- **DSPFNTTBL** — Afficher une table de polices
+- **DSPGDF** — DISPLAY GRAPHICS DATA FILE
+- **DSPHACFGD** — DISPLAY HA CONFIGURATION DESC.
+- **DSPHAPCY** — DISPLAY HA POLICY
+- **DSPHDWRSC** — Afficher ressources matériel
+- **DSPHFS** — Display Hierarchical File Sys.
+- **DSPHLPDOC** — Afficher un document d'aide
+- **DSPHSTGPH** — Display Historical Graph
+- **DSPHSTJS** — Afficher l'historique JS
+- **DSPHYSSTGD** — DISPLAY HYPERSWAP STORAGE DESC
+- **DSPHYSSTS** — DISPLAY HYPERSWAP STATUS
+- **DSPIGCDCT** — Display DBCS Conversion Dict
+- **DSPIPLA** — Afficher les attributs d'IPL
+- **DSPIPXD** — Display IPX Description
+- **DSPJOB** — Afficher l'état d'un travail
+- **DSPJOBD** — Afficher description travail
+- **DSPJOBJS** — Afficher un travail JS
+- **DSPJOBLOG** — Afficher historique du travail
+- **DSPJOBTBL** — Afficher les tables de travaux
+- **DSPJRN** — Afficher un journal
+- **DSPJRNRCVA** — Afficher attributs récepteur
+- **DSPJVMJOB** — Afficher les travaux JVM
+- **DSPKBDMAP** — Afficher table de clavier 3270
+- **DSPKRBCCF** — Display Credentials Cache File
+- **DSPKRBKTE** — Display Keytab Entries
+- **DSPLANADPP** — Afficher profil adaptateur LAN
+- **DSPLANMLB** — Afficher médiathèque LAN
+- **DSPLANSTS** — Afficher état du réseau local
+- **DSPLIB** — Afficher une bibliothèque
+- **DSPLIBD** — Afficher description de biblio
+- **DSPLIBL** — Afficher liste bibliothèques
+- **DSPLICKEY** — Afficher info clé de licence
+- **DSPLIND** — Afficher description de ligne
+- **DSPLNK** — Display Object Links
+- **DSPLNKLBRM** — Display Link List
+- **DSPLOG** — Afficher historique du système
+- **DSPLOGBRM** — Display Log for BRM
+- **DSPLOGJS** — Afficher le journal JS
+- **DSPMFSINF** — Afficher infos syst fich monté
+- **DSPMGDSYSA** — DISPLAY MANAGED SYSTEM ATR
+- **DSPMNUA** — Afficher attributs d'un menu
+- **DSPMOD** — Afficher un module
+- **DSPMODD** — Afficher description de mode
+- **DSPMODSRC** — Afficher source module
+- **DSPMODSTS** — Afficher l'état d'un mode
+- **DSPMSG** — Afficher les messages
+- **DSPMSGD** — Afficher description message
+- **DSPNCK** — Afficher un alias
+- **DSPNETA** — Afficher attributs du réseau
+- **DSPNODGRP** — Afficher groupe de noeuds
+- **DSPNTBD** — Afficher description NetBIOS
+- **DSPNWID** — Afficher interface de réseau
+- **DSPNWSA** — Afficher attributs serveur
+- **DSPNWSCFG** — Afficher config serveur réseau
+- **DSPNWSD** — Description serveur de réseau
+- **DSPNWSSTG** — Afficher espace stockage serv
+- **DSPNWSUSRA** — Afficher attrib util serveur
+- **DSPOBJAUT** — Afficher droits sur objet
+- **DSPOBJD** — Afficher description d'objet
+- **DSPOPCLNK** — DISPLAY OPTICONNECT LINK STS
+- **DSPOPT** — Afficher un volume optique
+- **DSPOPTLCK** — Afficher verr volume optique
+- **DSPOPTSVR** — Afficher un serveur optique
+- **DSPOSPF** — Display OSPF
+- **DSPOVR** — Afficher les substitutions
+- **DSPPDFMAPE** — DISPLAY PDF MAP ENTRIES
+- **DSPPDGPRF** — Display PDG Profile
+- **DSPPFM** — Afficher membre fich physique
+- **DSPPFRDTA** — Display Performance Data
+- **DSPPFRGPH** — Display Performance Graph
+- **DSPPGM** — Afficher un programme
+- **DSPPGMADP** — Afficher programmes adoptant
+- **DSPPGMREF** — Afficher références programmes
+- **DSPPGMVAR** — Afficher variable de programme
+- **DSPPRB** — Afficher les incidents
+- **DSPPSFCFG** — Afficher configuration PSF
+- **DSPPTF** — Afficher les PTF
+- **DSPPTFAPYI** — Infos d'application de PTF
+- **DSPPTFCVR** — Afficher lettre accompagnement
+- **DSPPTFGRP** — Afficher Groupe PTF
+- **DSPPWRSCD** — Afficher planning mise ST/HT
+- **DSPRCDLCK** — Afficher verrouillages enreg
+- **DSPRCVCMD** — DISPLAY RECEIVED COMMANDS
+- **DSPRCYAP** — Afficher rétabl chemins accès
+- **DSPRDBDIRE** — Afficher postes répertoire RDB
+- **DSPRIP** — Display RIP Information
+- **DSPRJECFG** — DISPLAY RJE CONFIGURATION
+- **DSPRMTDFN** — Afficher définition éloignée
+- **DSPS36** — DISPLAY S/36 CONFIGURATION
+- **DSPSAVF** — Afficher un fichier sauvegarde
+- **DSPSBMCRQ** — DISPLAY SUBMITTED CRQS
+- **DSPSBMCRQA** — DISPLAY SUBMITTED CRQ ACT
+- **DSPSBMCRQM** — DISPLAY SUBMITTED CRQ MESSAGES
+- **DSPSBSD** — Afficher descr de sous-système
+- **DSPSDSTL** — Display SMTP Dist List
+- **DSPSECA** — Afficher attributs de sécurité
+- **DSPSECAUD** — Afficher audit de sécurité
+- **DSPSFWRSC** — Afficher ressources logiciels
+- **DSPSMNPPW** — WORK WITH SYMBOLS
+- **DSPSOCSTS** — Afficher état sphère contrôle
+- **DSPSPLF** — Afficher un fichier spoule
+- **DSPSRVA** — Afficher attributs maintenance
+- **DSPSRVAGT** — Afficher Service Agent
+- **DSPSRVPGM** — Afficher programme de service
+- **DSPSRVPVDA** — DISPLAY SERVICE PROVIDER ATTR
+- **DSPSRVSTS** — Afficher l'état de maintenance
+- **DSPSSTSECA** — Attributs sécurité SST
+- **DSPSSTUSR** — Affich ID util outils mainten
+- **DSPSVCCPYD** — DISPLAY SVC COPY DESCRIPTION
+- **DSPSVCSSN** — DISPLAY SVC SESSION
+- **DSPSVRAUTE** — Afficher postes d'authentif
+- **DSPSYSSTS** — Afficher l'état du système
+- **DSPSYSVAL** — Afficher une valeur système
+- **DSPTAP** — Afficher contenu d'une bande
+- **DSPTAPCGY** — Afficher catégories de bande
+- **DSPTAPCTG** — Afficher cartouches de bande
+- **DSPTAPSTS** — Afficher l'état des bandes
+- **DSPTM** — Afficher les marques
+- **DSPTRC** — Afficher une trace
+- **DSPTRCDTA** — Afficher résultats de trace
+- **DSPUDFS** — Afficher syst fichiers util
+- **DSPUSGINF** — Infos utilisation partition
+- **DSPUSRPMN** — Afficher procurations utilisat
+- **DSPUSRPRF** — Afficher un profil utilisateur
+- **DSPUSRPRTI** — Afficher info impression util
+- **DSPVTMAP** — Display VT Keyboard Map
+- **DSPWEBQRY** — DISPLAY WEB QUERY
+- **DSPWLCGRP** — Afficher gpe charge de travail
+- **DSPWQSHURL** — DISPLAY WEB QUERY SHORT URL
+- **DSPWSUSR** — Afficher util poste de travail
+
+## EDT — Editer (20 commandes)
+
+- **EDTAUTL** — Réviser liste d'autorisation
+- **EDTBCKUPL** — Réviser liste de sauvegarde
+- **EDTCLU** — EDIT CL UTILITY
+- **EDTCPCST** — Réviser contraintes à vérifier
+- **EDTDLFA** — Editer attributs fichier DL
+- **EDTDLOAUT** — Réviser droits sur doc ou doss
+- **EDTDOC** — Réviser un document
+- **EDTF** — Edit File
+- **EDTIGCDCT** — Edit DBCS Conversion Dict
+- **EDTLIBL** — Réviser liste bibliothèques
+- **EDTOBJAUT** — Réviser droits sur un objet
+- **EDTQST** — Réviser Questions & Réponses
+- **EDTRBDAP** — Réviser reconstr chemins accès
+- **EDTRCYAP** — Réviser rétabl chemins accès
+- **EDTS36PGMA** — Réviser attributs de pgm 36
+- **EDTS36PRCA** — Réviser attributs procédure 36
+- **EDTS36SRCA** — Réviser attributs de source 36
+- **EDTSYMAPW** — EDIT SYMBOL
+- **EDTSYMPPW** — EDIT SYMBOL
+- **EDTWSOAUT** — Réviser droits sur objet OG
+
+## END — Arreter (97 commandes)
+
+- **ENDACCWEB** — Arrêter Access for Web
+- **ENDAGTSRV** — Arrêter services d'agent
+- **ENDASPBAL** — Arrêter l'équilibrage ASP
+- **ENDASPSSN** — END ASP SESSION
+- **ENDAUTCOL** — Terminer collecte droits
+- **ENDBCHJOB** — Fin de travail par lots
+- **ENDCAD** — END CLUSTER ADMIN DOMAIN
+- **ENDCBLDBG** — Arrêter le débogage COBOL
+- **ENDCCA** — End Code Coverage
+- **ENDCHTSVR** — End CHT Server
+- **ENDCICS** — END CICS
+- **ENDCICSUSR** — END CICS USER
+- **ENDCLNUP** — Arrêter le ménage
+- **ENDCLUNOD** — END CLUSTER NODE
+- **ENDCMNSVR** — Arrêter serveur communications
+- **ENDCMNTRC** — End Communications Trace
+- **ENDCMTCTL** — Arrêter contrôle de validation
+- **ENDCPYSCN** — Arrêter le télémiroir
+- **ENDCRG** — END CLUSTER RESOURCE GROUP
+- **ENDCRGCNR** — END CRG CONTAINER
+- **ENDCSMSSN** — END SVC ASP SESSION
+- **ENDCTLRCY** — Arrêter rétablissement de ctl
+- **ENDDBG** — Arrêter le mode débogage
+- **ENDDBGSVR** — End Debug Server
+- **ENDDBMON** — Arrêter moniteur base données
+- **ENDDEVRCY** — Arrêter rétablissement d'unité
+- **ENDDIRSHD** — Arrêter réplication répertoire
+- **ENDDO** — Fin de groupe DO
+- **ENDDSKRGZ** — Arrêter restructurat disques
+- **ENDDW** — End Disk Watcher
+- **ENDEPMENV** — End EPM Environments
+- **ENDFNTDWN** — END FONT DOWNLOADER
+- **ENDGRPJOB** — Arrêter un travail de groupe
+- **ENDHOSTSVR** — Arrêter serveur hôte
+- **ENDINP** — Fin des données
+- **ENDIPSIFC** — END IP OVER SNA INTERFACE
+- **ENDISDB** — Arrêter ISDB
+- **ENDJOB** — Arrêter un travail
+- **ENDJOBABN** — Arrêter anormalement travail
+- **ENDJOBTRC** — End Job Trace
+- **ENDJRN** — Arrêter journalisation
+- **ENDJRNAP** — Arrêter journalisation chemin
+- **ENDJRNLIB** — Arrêter journalisation biblio
+- **ENDJRNOBJ** — Arrêter journalisation objet
+- **ENDJRNPF** — Arrêter fich physique journal
+- **ENDJS** — Arrêter Job Scheduler
+- **ENDJW** — End Job Watcher
+- **ENDLINRCY** — Arrêter rétablissement ligne
+- **ENDLOGSVR** — Arrêter serveur histo travail
+- **ENDMGDSYS** — END MANAGED SYSTEM SERVICES
+- **ENDMGRSRV** — END MANAGER SERVICES
+- **ENDMOD** — Arrêter un mode
+- **ENDMONOND** — END MONITOR
+- **ENDMSF** — End Mail Server Framework
+- **ENDNFSSVR** — Arrêter le serveur NFS
+- **ENDNWIRCY** — END NETWORK INTERFACE RECOVERY
+- **ENDPASTHR** — Arrêter le passe-système
+- **ENDPEX** — End Performance Explorer
+- **ENDPFRCOL** — Arrêter collecte de perf
+- **ENDPFRTRC** — Arrêter trace performance
+- **ENDPGM** — Fin de programme
+- **ENDPGMEXP** — Fin liste exportation pgm
+- **ENDPGMPRF** — Arrêter profilage de programme
+- **ENDPJ** — Arrêter travaux anticipés
+- **ENDPRTEML** — Arrêter émulation imprimante
+- **ENDRCL** — End Remote Code Load
+- **ENDRCV** — Arrêter la réception
+- **ENDRDR** — Arrêter un lecteur
+- **ENDRJESSN** — END RJE SESSION
+- **ENDRMTSPT** — Arrêter le support à distance
+- **ENDRPCBIND** — Arrêter démon de liage RPC
+- **ENDRQS** — Arrêter la demande en cours
+- **ENDS36** — END S/36 SESSION
+- **ENDSAVSYNC** — Arrêter synchro sauvegarde
+- **ENDSBMCRQA** — END SUBMITTED CRQ ACTIVITY
+- **ENDSBS** — Arrêter un sous-système
+- **ENDSELECT** — End Select
+- **ENDSRVAGT** — Arrêter Service Agent
+- **ENDSRVJOB** — Arrêter maintenance de travail
+- **ENDSUBR** — Arrêter sous-programme
+- **ENDSVCSSN** — END SVC ASP SESSION
+- **ENDSYS** — Arrêter le système
+- **ENDSYSMGR** — END SYSTEM MANAGER
+- **ENDTCP** — End TCP/IP
+- **ENDTCPABN** — End TCP/IP Abnormal
+- **ENDTCPCNN** — End TCP/IP Connection
+- **ENDTCPIFC** — End TCP/IP Interface
+- **ENDTCPPTP** — End Point-to-Point TCP/IP
+- **ENDTCPSVR** — End TCP/IP Server
+- **ENDTFMMGR** — END TRANSFORM MANAGER
+- **ENDTIESSN** — Arrêter une session TIE
+- **ENDTRC** — End Trace
+- **ENDTRPMGR** — End Trap Manager
+- **ENDVPNCNN** — End VPN Connection
+- **ENDWCH** — End Watch
+- **ENDWEBQRY** — END WEB QUERY
+- **ENDWTR** — Arrêter un éditeur de spoule
+
+## FND — Rechercher (5 commandes)
+
+- **FNDKEYOND** — FIND BY KEY
+- **FNDSTRAMT** — FIND STRING USING AMT
+- **FNDSTRAMT2** — FIND STRING WITH LIST
+- **FNDSTRPDM** — Rechercher une chaîne par PDM
+- **FNDSTRPDM2** — Rechercher chaîne avec liste
+
+## GO — Aller a (2 commandes)
+
+- **GO** — Aller à un menu
+- **GOTO** — Aller à
+
+## GRT — Accorder (5 commandes)
+
+- **GRTACCAUT** — Accorder droits/codes d'accès
+- **GRTOBJAUT** — Accorder droits sur un objet
+- **GRTUSRAUT** — Accorder droits d'un utilisat
+- **GRTUSRPMN** — Accorder procuration à utilis
+- **GRTWSOAUT** — Accorder droits sur objet OG
+
+## HLD — Suspendre (12 commandes)
+
+- **HLDCMNDEV** — Suspendre unité communications
+- **HLDDSTQ** — Suspendre file de distribution
+- **HLDJOB** — Suspendre un travail
+- **HLDJOBJS** — Suspendre un travail JS
+- **HLDJOBQ** — Suspendre une file de travaux
+- **HLDJOBSCDE** — Suspendre poste planning travx
+- **HLDOUTQ** — Suspendre une file de sortie
+- **HLDPTF** — Hold Program Temporary Fix
+- **HLDRDR** — Suspendre un lecteur
+- **HLDSBMCRQA** — HOLD SUBMITTED CRQ ACTIVITY
+- **HLDSPLF** — Suspendre un fichier spoule
+- **HLDWTR** — Suspendre un éditeur de spoule
+
+## INS — Installer (5 commandes)
+
+- **INSCICSGRP** — INSTALL CICS GROUP
+- **INSINTSVR** — INSTALL INTEGRATED SERVER
+- **INSPTF** — Installer des PTF
+- **INSRMTPRD** — INSTALL REMOTE PRODUCT
+- **INSWNTSVR** — INSTALL WINDOWS SERVER
+
+## MON — Intercepter (2 commandes)
+
+- **MONMSG** — Intercepter message
+- **MONSWABRM** — Monitor Save While Active
+
+## MOV — Deplacer (7 commandes)
+
+- **MOV** — Déplacer un objet
+- **MOVDOC** — Déplacer un document
+- **MOVE** — Déplacer un objet
+- **MOVMEDBRM** — Move Media using BRM
+- **MOVOBJ** — Déplacer un objet
+- **MOVPFRCOL** — Move Performance Collection
+- **MOVSPLFBRM** — Move Spooled Files using BRM
+
+## MRG — Fusionner (9 commandes)
+
+- **MRGAPW** — MERGE FORM DESCRIPTION
+- **MRGFORMD** — Fusionner description imprimé
+- **MRGKPF** — FORM DESCRIPTION MERGE
+- **MRGMSGCLG** — Fusionner catalogues messages
+- **MRGMSGF** — Fusionner fichiers message
+- **MRGPPW** — MERGE FORM DESCRIPTION
+- **MRGSPLFOND** — MERGE SPOOLED FILES
+- **MRGSRC** — Fusionner un source
+- **MRGTCPHT** — Merge TCP/IP Host Table
+
+## OPN — Ouvrir (2 commandes)
+
+- **OPNDBF** — Ouvrir fichier base de données
+- **OPNQRYF** — Ouvrir un fichier de requête
+
+## OVR — Substituer (9 commandes)
+
+- **OVRDBF** — Substituer un fichier BD
+- **OVRDKTF** — Substituer fichier disquette
+- **OVRDSPF** — Substituer un fichier écran
+- **OVRICFDEVE** — Substituer unité fichier ICF
+- **OVRICFF** — Substituer un fichier ICF
+- **OVRMSGF** — Substituer un fichier messages
+- **OVRPRTF** — Substituer fichier imprimante
+- **OVRSAVF** — Substituer fichier sauvegarde
+- **OVRTAPF** — Substituer un fichier bande
+
+## PRT — Imprimer (52 commandes)
+
+- **PRTACTRPT** — Print Activity Report
+- **PRTADPOBJ** — Imprimer objets adoptant
+- **PRTAFPDTA** — Imprimer des données AFP
+- **PRTAPWSYM** — PRINT APW SYMBOL SPECIFICATION
+- **PRTCADMRE** — PRINT ADMIN DOMAIN MRE
+- **PRTCICSTRC** — PRINT CICS TRACE
+- **PRTCMDUSG** — Imprimer utilisation commandes
+- **PRTCMNSEC** — Imprimer sécurité communicat
+- **PRTCMNTRC** — Print Communications Trace
+- **PRTCPTRPT** — Print Component Report
+- **PRTDEVADR** — Imprimer adresses des unités
+- **PRTDIRINF** — Imprimer infos du répertoire
+- **PRTDOC** — Imprimer un document
+- **PRTDOCOND** — PRINT DOCUMENT
+- **PRTDSKINF** — Imprimer informations disque
+- **PRTERRLOG** — Imprimer historique d'erreurs
+- **PRTINTDTA** — Imprimer les données internes
+- **PRTIPSCFG** — PRINT IP OVER SNA
+- **PRTJOBDAUT** — Imprimer droits JOBD
+- **PRTJOBRPT** — Print Job Interval Report
+- **PRTJOBTRC** — Print Job Trace
+- **PRTJVMJOB** — Imprimer travail JVM
+- **PRTLBLBRM** — Print Labels using BRM
+- **PRTLCKRPT** — Print Lock Report
+- **PRTMEDBRM** — Print Media Exceptions for BRM
+- **PRTMOVBRM** — Print Media Movement
+- **PRTOPCACT** — PRINT OPTICONNECT ACTIVITY
+- **PRTOPCJOB** — PRINT OPTICONNECT JOBS
+- **PRTPEXRPT** — Print PEX Report
+- **PRTPOLRPT** — Print Pool Report
+- **PRTPRFINT** — Imprimer postes intern profil
+- **PRTPUBAUT** — Imprimer objets droits publics
+- **PRTPVTAUT** — Imprimer droits privés
+- **PRTQAUT** — Imprimer droits des files att
+- **PRTRPTBRM** — Print Report using BRM
+- **PRTRPTOND** — PRINT REPORT
+- **PRTRSCRPT** — Print Resource Report
+- **PRTSBSDAUT** — Imprimer descript sous-système
+- **PRTSCDJS** — Imprimer le planning JS
+- **PRTSQLINF** — Imprimer des informations SQL
+- **PRTSWL** — Imprimer liste mots d'arrêt
+- **PRTSYSINF** — Imprimer informations système
+- **PRTSYSRPT** — Print System Report
+- **PRTSYSSECA** — Imprimer attributs de sécurité
+- **PRTTCPPTP** — Print Point-to-Point Profile
+- **PRTTNSRPT** — Print Transaction Report
+- **PRTTRC** — Print Trace Data
+- **PRTTRCRPT** — Print Job Trace Report
+- **PRTTRGPGM** — Imprimer pgms de déclenchement
+- **PRTTXTOND** — PRINT TEXT
+- **PRTUSROBJ** — Imprimer objets utilisateur
+- **PRTUSRPRF** — Imprimer profils utilisateur
+
+## RCL — Recuperer (13 commandes)
+
+- **RCLACTGRP** — Récupérer groupe d'activation
+- **RCLAPPN** — Récupérer APPN
+- **RCLDBXREF** — Récupérer réf croisée BD
+- **RCLDDMCNV** — Récupérer conversations DDM
+- **RCLDLO** — Récupérer documents / dossiers
+- **RCLLIB** — Récupérer une bibliothèque
+- **RCLLNK** — Récupérer des liens d'objets
+- **RCLOBJOWN** — Récupérer objets par propriét
+- **RCLOPT** — Récupérer un volume optique
+- **RCLRSC** — Récupérer les ressources
+- **RCLSPLSTG** — Récupérer mémoire du spoule
+- **RCLSTG** — Récupérer mémoire secondaire
+- **RCLTMPSTG** — Récupérer mémoire temporaire
+
+## RCV — Recevoir (6 commandes)
+
+- **RCVDST** — Recevoir une distribution
+- **RCVF** — Recevoir fichier écran ou BD
+- **RCVJRNE** — Recevoir un poste de journal
+- **RCVMSG** — Recevoir un message
+- **RCVNETF** — Recevoir un fichier du réseau
+- **RCVTIEF** — Recevoir un fichier TIE
+
+## RGZ — Reorganiser (2 commandes)
+
+- **RGZDLO** — Réorganiser document / dossier
+- **RGZPFM** — Réorganiser membre fich phys
+
+## RLS — Liberer (14 commandes)
+
+- **RLSCMNDEV** — Libérer unité communications
+- **RLSDSTQ** — Libérer file de distribution
+- **RLSIFSLCK** — Libérer verrous syst fichiers
+- **RLSJOB** — Libérer un travail
+- **RLSJOBJS** — Libérer un travail JS
+- **RLSJOBQ** — Libérer une file de travaux
+- **RLSJOBSCDE** — Libérer poste planning travaux
+- **RLSOUTQ** — Libérer une file de sortie
+- **RLSPTF** — Release Program Temporary Fix
+- **RLSRDR** — Libérer un lecteur
+- **RLSRMTPHS** — Libérer phase éloignée
+- **RLSSBMCRQA** — RELEASE SUBMITTED CRQ ACTIVITY
+- **RLSSPLF** — Libérer un fichier spoule
+- **RLSWTR** — Libérer un éditeur de spoule
+
+## RMV — Enlever (143 commandes)
+
+- **RMVACC** — Enlever un code d'accès
+- **RMVACCWEB** — Enlever Access for Web
+- **RMVAJE** — Enlever poste travail auto
+- **RMVALRD** — Enlever description d'alerte
+- **RMVASPCPYD** — REMOVE ASP COPY DESCRIPTION
+- **RMVAUTLE** — Enlever poste liste autorisat
+- **RMVBKP** — Enlever un point d'arrêt
+- **RMVBNDDIRE** — Enlever poste répertoire liage
+- **RMVCADMRE** — REMOVE ADMIN DOMAIN MRE
+- **RMVCADNODE** — REMOVE ADMIN DOMAIN NODE ENTRY
+- **RMVCCSCLT** — REMOVE CC SERVER CLIENT
+- **RMVCFGLE** — Enlever poste liste de config
+- **RMVCICSCVT** — REMOVE CICS CVT ENTRY
+- **RMVCICSDCT** — REMOVE CICS DCT ENTRY
+- **RMVCICSFCT** — REMOVE CICS FCT ENTRY
+- **RMVCICSGLT** — REMOVE CICS GLT ENTRY
+- **RMVCICSJCT** — REMOVE CICS JCT ENTRY
+- **RMVCICSPCT** — REMOVE CICS PCT ENTRY
+- **RMVCICSPPT** — REMOVE CICS PPT ENTRY
+- **RMVCICSSIT** — REMOVE CICS SIT ENTRY
+- **RMVCICSTCS** — REMOVE CICS TCS ENTRY
+- **RMVCICSTCT** — REMOVE CICS TCT ENTRY
+- **RMVCICSTST** — REMOVE CICS TST ENTRY
+- **RMVCKMKSFE** — Remove Keystore File Entry
+- **RMVCLUMON** — REMOVE CLUSTER MONITOR
+- **RMVCLUNODE** — REMOVE CLUSTER NODE ENTRY
+- **RMVCMNE** — Enlever poste communications
+- **RMVCOMSNMP** — Remove Community for SNMP
+- **RMVCRGDEVE** — REMOVE CRG DEVICE ENTRY
+- **RMVCRGNODE** — REMOVE CRG NODE ENTRY
+- **RMVCRQDA** — REMOVE CRQD ACTIVITY
+- **RMVDEVDMNE** — REMOVE DEVICE DOMAIN ENTRY
+- **RMVDFRID** — Supprimer ID mise en différé
+- **RMVDIR** — Enlever un répertoire
+- **RMVDIRE** — Enlever un poste du répertoire
+- **RMVDIRINST** — Remove Directory Server Inst
+- **RMVDIRSHD** — Enlever système en réplication
+- **RMVDLOAUT** — Enlever droits sur doc ou doss
+- **RMVDSTCLGE** — REMOVE DST CATALOG ENTRY
+- **RMVDSTLE** — Enlever poste liste diffusion
+- **RMVDSTQ** — Enlever file de distribution
+- **RMVDSTRTE** — Enlever route de distribution
+- **RMVDSTSYSN** — Enlever nom secondaire système
+- **RMVDWDFN** — Remove Disk Watcher Definition
+- **RMVEMLCFGE** — Enlever poste configuration
+- **RMVENVVAR** — Remove Environment Variable
+- **RMVEWCBCDE** — Enlever poste code barres EWC
+- **RMVEWCPTCE** — Enlever un poste PTC EWC
+- **RMVEXITPGM** — Remove Exit Program
+- **RMVFCTE** — REMOVE FORMS CONTROL ENTRY
+- **RMVFNTTBLE** — Enlever poste table de polices
+- **RMVFTRACNE** — Enlever poste action filtre
+- **RMVFTRSLTE** — Enlever poste sélection filtre
+- **RMVHACFGD** — REMOVE HA CONFIGURATION DESC.
+- **RMVHAPCY** — REMOVE HA POLICY
+- **RMVHSTJS** — Enlever postes historique JS
+- **RMVHYSSTGD** — REMOVE HYPERSWAP STORAGE DESC
+- **RMVICFDEVE** — Enlever unité de fichier ICF
+- **RMVIMGCLGE** — Enlever poste catalogue images
+- **RMVIPSIFC** — REMOVE IP OVER SNA INTERFACE
+- **RMVIPSLOC** — REMOVE IP OVER SNA LOCATION
+- **RMVIPSRTE** — REMOVE IP OVER SNA ROUTE
+- **RMVJOBJS** — Enlever un travail JS
+- **RMVJOBQE** — Enlever poste file de travaux
+- **RMVJOBSCDE** — Enlever poste planning travaux
+- **RMVJRNCHG** — Enlever modifs journalisées
+- **RMVJWDFN** — Remove Job Watcher Definition
+- **RMVKRBKTE** — Remove Kerberos Keytab Entry
+- **RMVLANADPI** — Enlever info adaptateur LAN
+- **RMVLANADPT** — Enlever un adaptateur LAN
+- **RMVLIBLE** — Enlever poste de liste biblio
+- **RMVLICKEY** — Enlever info clé de licence
+- **RMVLNK** — Enlever un lien
+- **RMVLOGEBRM** — Remove Log Entries from BRM
+- **RMVLOGEJS** — Enlever postes journal JS
+- **RMVM** — Enlever un membre
+- **RMVMEDBRM** — Remove Media Volumes from BRM
+- **RMVMEDIBRM** — Remove Media Info from BRM
+- **RMVMFS** — Enlever système fichiers monté
+- **RMVMODCCA** — Remove Code Coverage Module
+- **RMVMSG** — Enlever un message
+- **RMVMSGD** — Enlever description de message
+- **RMVNCK** — Enlever un alias
+- **RMVNETJOBE** — Enlever poste travaux réseau
+- **RMVNETTBLE** — Remove Network Table Entry
+- **RMVNODLE** — Remove Node List Entry
+- **RMVNWSSTGL** — Enlever lien stockage serveur
+- **RMVOPTCTG** — Enlever une cartouche optique
+- **RMVOPTSVR** — Enlever un serveur optique
+- **RMVOSPFARA** — Remove OSPF Area
+- **RMVOSPFIFC** — Remove OSPF Interface
+- **RMVOSPFLNK** — Remove OSPF Virtual Link
+- **RMVOSPFRNG** — Remove OSPF Range
+- **RMVPCLTBLE** — Remove Protocol Table Entry
+- **RMVPEXDFN** — Remove PEX Definition
+- **RMVPEXFTR** — Remove PEX Filter
+- **RMVPFCST** — Enlever contrainte fich phys
+- **RMVPFTRG** — Enlever déclencheur fichier
+- **RMVPGM** — Enlever programme du débogage
+- **RMVPJE** — Enlever poste trav anticipés
+- **RMVPTF** — Enlever des PTF
+- **RMVRDBDIRE** — Enlever poste répertoire RDB
+- **RMVREXBUF** — Remove REXX Buffer
+- **RMVRIPACP** — Remove RIP Accepted Route
+- **RMVRIPFLT** — Remove RIP Filter
+- **RMVRIPIFC** — Remove RIP Interface
+- **RMVRIPIGN** — Remove Ignored RIP Neighbor
+- **RMVRJECMNE** — REMOVE RJE COMMUNICATION ENTRY
+- **RMVRJERDRE** — REMOVE RJE READER ENTRY
+- **RMVRJEWTRE** — REMOVE RJE WRITER ENTRY
+- **RMVRMTDFN** — Enlever définition éloignée
+- **RMVRMTJRN** — Enlever un journal éloigné
+- **RMVRMTPTF** — REMOVE REMOTE PTF
+- **RMVRPTOND** — REMOVE REPORT
+- **RMVRPYLE** — Enlever poste liste de réponse
+- **RMVRTGE** — Enlever un poste de routage
+- **RMVSCHIDXE** — Enlever poste d'index d'aide
+- **RMVSDSTLE** — Remove SMTP Dist List Entry
+- **RMVSMTPLE** — Remove SMTP List Entry
+- **RMVSMTPRLE** — Remove Remote Login Entry
+- **RMVSOCE** — Enlever poste sphère contrôle
+- **RMVSRVTBLE** — Remove Service Table Entry
+- **RMVSVCCPYD** — REMOVE SVC COPY DESCRIPTION
+- **RMVSVRAUTE** — Enlever poste authent serveur
+- **RMVTAPCTG** — Enlever une cartouche de bande
+- **RMVTCPHTE** — Remove TCP/IP Host Table Entry
+- **RMVTCPIFC** — Remove TCP/IP Interface
+- **RMVTCPPORT** — Remove TCP/IP Port Restriction
+- **RMVTCPPTP** — Remove Point-to-Point Profile
+- **RMVTCPRSI** — REMOVE TCP/IP REMOTE SYSTEM
+- **RMVTCPRTE** — Remove TCP/IP Route
+- **RMVTCPSVR** — Remove TCP/IP Server
+- **RMVTCPTBL** — Remove TCP/IP Table
+- **RMVTRC** — Enlever une trace au débogage
+- **RMVTRCFTR** — Remove Trace Filter
+- **RMVUSRSMTP** — Remove User SMTP
+- **RMVUSRSNMP** — Remove User for SNMP
+- **RMVVACSNMP** — Remove VACM for SNMP
+- **RMVWLCGRP** — Enlever gpe charge de travail
+- **RMVWLCPRDE** — Enlever poste gpe charge trav
+- **RMVWQLUSR** — REMOVE WEB QUERY LICENSED USER
+- **RMVWQUSR** — REMOVE WEB QUERY USER
+- **RMVWSE** — Enlever un poste écran
+
+## RSM — Reprendre (6 commandes)
+
+- **RSMBKP** — Reprendre au point d'arrêt
+- **RSMCTLRCY** — Reprendre rétablissement ctl
+- **RSMDEVRCY** — Reprendre rétablissement unité
+- **RSMLINRCY** — Reprendre rétablissement ligne
+- **RSMNWIRCY** — RESUME NWI RECOVERY
+- **RSMRTVBRM** — Resume Retrieve using BRM
+
+## RST — Restaurer (22 commandes)
+
+- **RST** — Restaurer objet
+- **RSTAPARDTA** — Restore APAR Data
+- **RSTAUT** — Restaurer les droits
+- **RSTAUTBRM** — Restore Authority using BRM
+- **RSTBRM** — Restore Object using BRM
+- **RSTCFG** — Restaurer configuration
+- **RSTDFROBJ** — Restaurer objets différés
+- **RSTDLO** — Restaurer document ou dossier
+- **RSTDLOBRM** — Restore DLO using BRM
+- **RSTHAPCY** — RESTORE HA POLICY
+- **RSTLIB** — Restaurer bibliothèque
+- **RSTLIBBRM** — Restore Library using BRM
+- **RSTLICPGM** — Restaurer logiciel ss/licence
+- **RSTOBJ** — Restaurer objet
+- **RSTOBJBRM** — Restore Object using BRM
+- **RSTPFCF** — RESTORE PFC FONT AND FORM
+- **RSTPFRCOL** — Restore Performance Collection
+- **RSTS36F** — Restaurer un fichier 36
+- **RSTS36FLR** — Restaurer un dossier 36
+- **RSTS36LIBM** — Restaurer membres de biblio 36
+- **RSTSYSINF** — Restaurer infos système
+- **RSTUSRPRF** — Restaurer profils utilisateur
+
+## RTV — Extraire (49 commandes)
+
+- **RTVASPCPYD** — RETRIEVE ASP COPY DESCRIPTION
+- **RTVASPSSN** — RETRIEVE ASP SESSION
+- **RTVAUTLE** — Extraire poste liste autorisat
+- **RTVBCKUP** — Extraire options de sauvegarde
+- **RTVBNDSRC** — Extraire source de liage
+- **RTVCFGSRC** — Extraire source configuration
+- **RTVCFGSTS** — Extraire état de configuration
+- **RTVCLDSRC** — Retrieve C Locale Description
+- **RTVCLNUP** — Extraire options de ménage
+- **RTVCLSRC** — Extraire un source CL
+- **RTVCLU** — RETRIEVE CLUSTER
+- **RTVCRG** — RETRIEVE CRG
+- **RTVCSMSSN** — RETRIEVE CSM ASP SESSION
+- **RTVCURDIR** — Extraire répertoire en cours
+- **RTVDIRINF** — Extraire infos répertoire
+- **RTVDLOAUT** — Extraire droits DLO
+- **RTVDLONAM** — Extraire nom doc ou dossier
+- **RTVDOC** — Extraire un document
+- **RTVDOCOND** — RETRIEVE DOCUMENT
+- **RTVDSKINF** — Extraire informations disque
+- **RTVDTAARA** — Extraire une zone de données
+- **RTVGRPA** — Extraire attributs de groupe
+- **RTVIMGCLG** — Extraire catalogue d'images
+- **RTVJOBA** — Extraire attributs du travail
+- **RTVJRNE** — Extraire un poste de journal
+- **RTVLIBD** — Extraire description de biblio
+- **RTVMBRD** — Extraire description de membre
+- **RTVMSG** — Extraire un message
+- **RTVNETA** — Extraire attributs du réseau
+- **RTVOBJD** — Extraire description d'objet
+- **RTVPDGPRF** — Retrieve PDG Profile
+- **RTVPRD** — RETRIEVE PRODUCT
+- **RTVPTF** — RETRIEVE PROGRAM TEMPORARY FIX
+- **RTVPWRSCDE** — Extraire poste planning ST/HT
+- **RTVQMFORM** — Extraire un format QM
+- **RTVQMQRY** — Extraire une requête QM
+- **RTVS36A** — RETRIEVE S/36 ENVIRONMENT ATTR
+- **RTVSMGOBJ** — RETRIEVE SMG OBJECT
+- **RTVSRVAGT** — Extraire Service Agent
+- **RTVSVCCPYD** — RETRIEVE SVC COPY DESCRIPTION
+- **RTVSVCSSN** — RETRIEVE SVC SESSION
+- **RTVSWLSRC** — Extraire srce liste mots arrêt
+- **RTVSYSINF** — Extraire informations système
+- **RTVSYSVAL** — Extraire une valeur système
+- **RTVTBLSRC** — Extraire source de table
+- **RTVTCPINF** — Retrieve TCP/IP Information
+- **RTVUSRPRF** — Extraire un profil utilisateur
+- **RTVUSRPRTI** — Extraire info impression util
+- **RTVWSCST** — Retrieve WSCST source
+
+## RUN — Executer (14 commandes)
+
+- **RUNBCKUP** — Lancer la sauvegarde
+- **RUNBRSCHED** — RUN A REPORT BROKER SCHEDULE
+- **RUNDNSUPD** — Run DNS Update
+- **RUNJVA** — Exécuter un programme Java
+- **RUNLPDA** — Lancer LPDA-2
+- **RUNQRY** — Lancer une analyse
+- **RUNRMTCMD** — Run Remote Command
+- **RUNRNDCCMD** — Run RNDC Command
+- **RUNSMGCMD** — RUN SMG COMMAND
+- **RUNSMGOBJ** — RUN SMG OBJECT
+- **RUNSQL** — Exécuter SQL
+- **RUNSQLSTM** — Run SQL Statements
+- **RUNWEBQRY** — RUN WEB QUERY REPORT
+- **RUNWQFEX** — RUN WEB QUERY REPORT
+
+## SAV — Sauvegarder (33 commandes)
+
+- **SAV** — Sauvegarder objet
+- **SAVAPARDTA** — Save APAR Data
+- **SAVBRM** — Save Object using BRM
+- **SAVCFG** — Sauvegarder la configuration
+- **SAVCHGOBJ** — Sauvegarder objets modifiés
+- **SAVCICSGRP** — SAVE CICS GROUP
+- **SAVDLO** — Sauvegarder doc ou dossier
+- **SAVDLOBRM** — Save DLO using BRM
+- **SAVFLRLBRM** — Save Folder List using BRM
+- **SAVHAPCY** — SAVE HA POLICY
+- **SAVLIB** — Sauvegarder bibliothèque
+- **SAVLIBBRM** — Save Library using BRM
+- **SAVLICPGM** — Sauvegarder logiciel s/licence
+- **SAVMEDIBRM** — Save Media Info using BRM
+- **SAVOBJ** — Sauvegarder objet
+- **SAVOBJBRM** — Save Object using BRM
+- **SAVOBJLBRM** — Save Object List using BRM
+- **SAVPFCF** — SAVE PFC FONT AND FORM
+- **SAVPFRCOL** — Save Performance Collection
+- **SAVRST** — SAVE RESTORE
+- **SAVRSTCFG** — SAVE RESTORE CONFIGURATION
+- **SAVRSTCHG** — SAVE RESTORE CHANGED OBJECTS
+- **SAVRSTDLO** — SAVE RESTORE DOC/LIB OBJECT
+- **SAVRSTLIB** — SAVE RESTORE LIBRARY
+- **SAVRSTOBJ** — SAVE RESTORE OBJECT
+- **SAVS36F** — Sauvegarder un fichier 36
+- **SAVS36LIBM** — Sauvegarder membres biblio 36
+- **SAVSAVFBRM** — Save Save Files using BRM
+- **SAVSAVFDTA** — Sauvegarder données fich sauv
+- **SAVSECDTA** — Sauvegarder données sécurité
+- **SAVSYS** — Sauvegarder le système
+- **SAVSYSBRM** — Save System using BRM
+- **SAVSYSINF** — Sauvegarder infos système
+
+## SBM — Soumettre (12 commandes)
+
+- **SBMCMDJS** — Soumettre commande console
+- **SBMCODEJOB** — Soumettre travail lots CODE
+- **SBMCRQ** — SUBMIT CHANGE REQUEST
+- **SBMDBJOB** — Soumettre des travaux BD
+- **SBMDKTJOB** — Soumettre travaux disquette
+- **SBMFNCJOB** — Soumettre un travail bancaire
+- **SBMJOB** — Soumettre un travail
+- **SBMJOBJS** — Soumettre un travail via JS
+- **SBMNETJOB** — Soumettre un travail au réseau
+- **SBMNWSCMD** — Soumettre cde serveur réseau
+- **SBMRJEJOB** — SUBMIT RJE JOB
+- **SBMRMTCMD** — Soumettre commande à distance
+
+## SET — Definir (19 commandes)
+
+- **SETASPGRP** — Définir groupe ASP
+- **SETATNPGM** — Définir programme pour ATTN
+- **SETCSTDTA** — Définir données personnalisat
+- **SETDEPJS** — Modifier une dépendance JS
+- **SETDLJS** — Définir biblio données via JS
+- **SETDNSRVK** — Set DNSSEC REVOKE Bit
+- **SETFCNBRM** — SET FUNCTION BRMS
+- **SETKBDMAP** — Définir table de clavier 3270
+- **SETMEDBRM** — Set Media Controls using BRM
+- **SETMSTKEY** — Set Master Key
+- **SETOBJACC** — Définir l'accès à un objet
+- **SETPGMINF** — Set Program Information
+- **SETRTVBRM** — Set Retrieve Controls for BRM
+- **SETSTPJS** — Définir une étape via JS
+- **SETTAPCGY** — Définir une catégorie de bande
+- **SETUPGENV** — Définir environmt d'évolution
+- **SETUSRBRM** — Set User Usage for BRM
+- **SETVTMAP** — Set VT Keyboard Map
+- **SETVTTBL** — Set VT Mapping Tables
+
+## SND — Envoyer (28 commandes)
+
+- **SNDARPRQS** — Send ARP Request
+- **SNDBRKMSG** — Envoyer message d'interruption
+- **SNDDST** — Envoyer une distribution
+- **SNDDSTJS** — Envoyer distribution via JS
+- **SNDDSTQ** — Envoyer file de distribution
+- **SNDF** — Envoyer fichier écran
+- **SNDFNCIMG** — Envoyer image de disquette FNC
+- **SNDJRNE** — Envoyer un poste dans journal
+- **SNDLIC** — SEND LICENSE
+- **SNDMSG** — Envoyer un message
+- **SNDNETF** — Envoyer un fichier au réseau
+- **SNDNETMSG** — Envoyer un message au réseau
+- **SNDNETSPLF** — Envoyer fich spoule au réseau
+- **SNDNGHSOL** — Send Neighbor Solicitation
+- **SNDPGMMSG** — Envoyer un message programme
+- **SNDPRD** — SEND PRODUCT
+- **SNDPTF** — SEND PROGRAM TEMPORARY FIX
+- **SNDPTFORD** — Envoyer une demande de PTF
+- **SNDRCVF** — Envoyer/recevoir fichier écran
+- **SNDRJECMD** — SEND RJE COMMAND
+- **SNDRPTJS** — Envoyer des rapports via JS
+- **SNDRPY** — Envoyer une réponse
+- **SNDSMGOBJ** — SEND SMG OBJECT
+- **SNDSMTPEMM** — Send SMTP E-mail Message
+- **SNDSRVRQS** — Envoyer demande de maintenance
+- **SNDTCPSPLF** — Send TCP/IP Spooled File
+- **SNDTIEF** — Envoyer un fichier TIE
+- **SNDUSRMSG** — Envoyer un message utilisateur
+
+## STR — Demarrer (144 commandes)
+
+- **STRACCWEB** — Démarrer Access for Web
+- **STRAGTSRV** — Démarrer services d'agent
+- **STRAMT** — START AMT
+- **STRAPF** — Démarrer APF
+- **STRAPW** — START ADVANCED PRINT WRITER
+- **STRAPWMGR** — START S/36 APW MIGRATION
+- **STRARCBRM** — Start Archive using BRM
+- **STRASMOND** — START ARCHIVED STORAGE MGMT
+- **STRASPBAL** — Démarrer l'équilibrage ASP
+- **STRASPSSN** — START ASP SESSION
+- **STRAUTCOL** — Démarrer collecte droits
+- **STRBALBRM** — Start Media Balancing for BRM
+- **STRBGU** — START BGU
+- **STRBKUBRM** — Start Backup using BRM
+- **STRCAD** — START CLUSTER ADMIN DOMAIN
+- **STRCBLDBG** — Démarrer le débogage COBOL
+- **STRCCA** — Start Code Coverage
+- **STRCGU** — Start CGU
+- **STRCHTSVR** — Start CHT Server
+- **STRCICS** — START CICS
+- **STRCICSUSR** — START CICS USER
+- **STRCLNUP** — Démarrer le ménage
+- **STRCLUNOD** — START CLUSTER NODE
+- **STRCMNSVR** — Démarrer serveur communicat
+- **STRCMNTRC** — Start Communications Trace
+- **STRCMTCTL** — Démarrer contrôle validation
+- **STRCODE** — Démarrer CODE
+- **STRCODECMD** — Commande Démarrer CODE
+- **STRCPYSCN** — Démarrer le télémiroir
+- **STRCRG** — START CLUSTER RESOURCE GROUP
+- **STRCRGCNR** — START CRG CONTAINER
+- **STRCSMSSN** — START CSM ASP SESSION
+- **STRDBG** — Démarrer le débogage
+- **STRDBGSVR** — Start Debug Server
+- **STRDBMON** — Démarrer moniteur base données
+- **STRDBRDR** — Démarrer un lecteur BD
+- **STRDFU** — Démarrer DFU
+- **STRDIGQRY** — Start DIG Query
+- **STRDIRSHD** — Démarrer réplication répert
+- **STRDKTRDR** — Démarrer un lecteur disquette
+- **STRDKTWTR** — Démarrer un éditeur disquette
+- **STRDNSQRY** — Start NSLOOKUP Query
+- **STRDSKRGZ** — Démarrer restructurat disques
+- **STRDSMOND** — START DISK STORAGE MANAGEMENT
+- **STRDW** — Start Disk Watcher
+- **STREDU** — Démarrer la formation
+- **STREML3270** — Démarrer émulation écran 3270
+- **STREPMENV** — Start EPM Environment
+- **STREXPBRM** — Start Expiration for BRM
+- **STRFMA** — Start Font Management Aid
+- **STRFNTDWN** — START FONT DOWNLOADER
+- **STRGRPJS** — Démarrer un groupe JS
+- **STRHOSTQRY** — Start HOST Query
+- **STRHOSTSVR** — Démarrer serveur hôte
+- **STRIDD** — Démarrer IDDU
+- **STRIMPOND** — START IMPORT
+- **STRIMPSMTP** — Start Import for SMTP Users
+- **STRIPSIFC** — START IP OVER SNA INTERFACE
+- **STRISDB** — Démarrer ISDB
+- **STRITF** — Démarrer ITF
+- **STRJOBTRC** — Start Job Trace
+- **STRJRN** — Démarrer la journalisation
+- **STRJRNAP** — Démarrer journalisation chemin
+- **STRJRNLIB** — Démarrer journal biblio
+- **STRJRNOBJ** — Démarrer journalisation objet
+- **STRJRNPF** — Démarrer journalisation fich
+- **STRJS** — Démarrer Job Scheduler
+- **STRJW** — Start Job Watcher
+- **STRKPF** — START KANJI PRINTER FUNCTION
+- **STRLOGSVR** — Démarrer serveur histo travail
+- **STRMGDSYS** — START MANAGED SYSTEM SERVICES
+- **STRMGRBRM** — Start Migration using BRM
+- **STRMGRSRV** — START MANAGER SERVICES
+- **STRMNTBRM** — Start Maintenance for BRM
+- **STRMOD** — Démarrer un mode
+- **STRMONOND** — START MONITOR
+- **STRMSF** — Start Mail Server Framework
+- **STRNETINS** — Lancer l'installation réseau
+- **STRNFSSVR** — Démarrer le serveur NFS
+- **STROBJCVN** — Démarrer conversion d'objet
+- **STRPASTHR** — Démarrer le passe-système
+- **STRPCCMD** — Démarrer commande PC
+- **STRPCO** — Démarrer Intégrateur PC
+- **STRPDM** — Démarrer PDM
+- **STRPEX** — Start Performance Explorer
+- **STRPFC** — START PRINTER FUNCTION CONTROL
+- **STRPFRCOL** — Démarrer collecte de perf
+- **STRPFRG** — Start Performance Graphics
+- **STRPFRT** — Start Performance Tools
+- **STRPFRTRC** — Démarrer trace performance
+- **STRPGMEXP** — Démarrer liste exportation pgm
+- **STRPGMMNU** — Démarrer le menu programmeur
+- **STRPGMPRF** — Démarrer profilage de pgm
+- **STRPJ** — Démarrer travaux anticipés
+- **STRPPW** — START PAGE PRINTER WRITER
+- **STRPRTEML** — Démarrer émulation imprimante
+- **STRPRTWTR** — Démarrer un éditeur imprimante
+- **STRQM** — Démarrer DB2 UDB Query Manager
+- **STRQMPRC** — Démarrer une procédure QM
+- **STRQMQRY** — Démarrer une requête QM
+- **STRQRY** — Démarrer QUERY
+- **STRQSH** — Start QSH
+- **STRQST** — Démarrer Questions & Réponses
+- **STRRCL** — Start Remote Code Load
+- **STRRCYBRM** — Start Recovery using BRM
+- **STRREXPRC** — Start REXX Procedure
+- **STRRJECSL** — START RJE CONSOLE
+- **STRRJERDR** — START RJE READER
+- **STRRJESSN** — START RJE SESSION
+- **STRRJEWTR** — START RJE WRITER
+- **STRRLU** — Démarrer Utilit maquette état
+- **STRRMCRDAR** — START REPORT MANAGEMENT CYCLE
+- **STRRMTSPT** — Démarrer le support à distance
+- **STRRMTWTR** — Démarrer un éditeur éloigné
+- **STRRSESVR** — Démarrer serveur RSE
+- **STRS36** — START S/36 SESSION
+- **STRS36PRC** — START S/36 PROCEDURE
+- **STRSAVSYNC** — Lancer synchro de sauvegarde
+- **STRSBS** — Démarrer un sous-système
+- **STRSBSBRM** — Start Subsystems using BRM
+- **STRSCHIDX** — Démarrer index d'aide
+- **STRSDA** — Démarrer SDA
+- **STRSEU** — Démarrer Editeur de source
+- **STRSPLRCL** — Démarrer récupération spoule
+- **STRSPTN** — Démarrer réseau d'assistance
+- **STRSQL** — Démarrer une session SQL
+- **STRSRVAGT** — Démarrer Service Agent
+- **STRSRVJOB** — Démarrer maintenance travail
+- **STRSST** — Start System Service Tools
+- **STRSVCSSN** — START SVC SESSION
+- **STRSYSMGR** — START SYSTEM MANAGER
+- **STRTCP** — Start TCP/IP
+- **STRTCPFTP** — Start TCP/IP File Transfer
+- **STRTCPIFC** — Start TCP/IP Interface
+- **STRTCPPTP** — Start Point-to-Point TCP/IP
+- **STRTCPSVR** — Start TCP/IP Server
+- **STRTCPTELN** — Start TCP/IP Telnet
+- **STRTFMMGR** — START TRANSFORM MANAGER
+- **STRTIESSN** — Démarrer une session TIE
+- **STRTRC** — Start Trace
+- **STRTRPMGR** — Start Trap Manager
+- **STRVPNCNN** — Start VPN Connection
+- **STRWCH** — Start Watch
+- **STRWEBQRY** — START WEB QUERY
+
+## TFR — Transferer (6 commandes)
+
+- **TFRBCHJOB** — Transférer un travail par lots
+- **TFRCTL** — Transférer contrôle à pgm
+- **TFRGRPJOB** — Transférer à travail de groupe
+- **TFRJOB** — Transférer un travail
+- **TFRPASTHR** — Transférer passe-système
+- **TFRSECJOB** — Transférer à session alternée
+
+## TRC — Tracer (10 commandes)
+
+- **TRCASPBAL** — Tracer l'équilibrage ASP
+- **TRCCNN** — Trace Connection
+- **TRCCPIC** — Trace CPI Communications
+- **TRCICF** — Tracer ICF
+- **TRCINT** — Tracer les internes
+- **TRCJOB** — Tracer un travail
+- **TRCREX** — Trace REXX
+- **TRCTCPAPP** — Trace TCP/IP Application
+- **TRCTCPRTE** — Trace TCP/IP Route
+- **TRCWEBQRY** — TRACE WEB QUERY
+
+## VFY — Verifier (12 commandes)
+
+- **VFYAPPCCNN** — Verify APPC Connection
+- **VFYCMN** — Tester les communications
+- **VFYIMGCLG** — Vérifier catalogue d'images
+- **VFYLNKLPDA** — Tester liaison LPDA-2
+- **VFYMOVBRM** — Verify Moves using BRM
+- **VFYOPCCNN** — VERIFY OPTICONNECT CONNECTIONS
+- **VFYOPT** — Tester une unité optique
+- **VFYPRT** — Tester une imprimante
+- **VFYSRVAGT** — Vérifier Service Agent
+- **VFYSRVCFG** — Vérifier config de maintenance
+- **VFYTAP** — Tester une unité de bande
+- **VFYTCPCNN** — Verify TCP/IP Connection
+
+## VRY — Varier (1 commandes)
+
+- **VRYCFG** — Changer état configuration
+
+## WRK — Gerer (238 commandes)
+
+- **WRKACTJOB** — Gérer les travaux actifs
+- **WRKALR** — Gérer les alertes
+- **WRKALRD** — Gérer descriptions d'alerte
+- **WRKALRTBL** — Gérer une table d'alertes
+- **WRKAPPNSTS** — Gérer état APPN
+- **WRKARMJOB** — Gérer travaux ARM
+- **WRKASPBRM** — Work with ASP Descriptions
+- **WRKASPCPYD** — WORK WITH ASP COPY DESCRIPTION
+- **WRKASPJOB** — Gérer travaux ASP
+- **WRKAUT** — Gérer les droits
+- **WRKAUTL** — Gérer listes d'autorisation
+- **WRKBNDDIR** — Gérer les répertoires de liage
+- **WRKBNDDIRE** — Gérer postes répertoire liage
+- **WRKBPTBL** — Work with BOOTP table
+- **WRKCADMRE** — WORK WITH MONITORED RESOURCES
+- **WRKCALBRM** — Work with Calendars using BRM
+- **WRKCFGL** — Gérer listes de configuration
+- **WRKCFGSTS** — Gérer état de la configuration
+- **WRKCHTFMT** — Gérer les formats de diagramme
+- **WRKCICSCVT** — WORK WITH CICS CVT
+- **WRKCICSDCT** — WORK WITH CICS DCT
+- **WRKCICSFCT** — WORK WITH CICS FCT
+- **WRKCICSGLT** — WORK WITH CICS GLT
+- **WRKCICSGRP** — WORK WITH CICS GROUP
+- **WRKCICSJCT** — WORK WITH CICS JCT
+- **WRKCICSPCT** — WORK WITH CICS PCT
+- **WRKCICSPPT** — WORK WITH CICS PPT
+- **WRKCICSSIT** — WORK WITH CICS SIT
+- **WRKCICSSTS** — WORK CICS STATUS
+- **WRKCICSTCS** — WORK WITH CICS TCS
+- **WRKCICSTCT** — WORK WITH CICS TCT
+- **WRKCICSTST** — WORK WITH CICS TST
+- **WRKCLS** — Gérer les classes
+- **WRKCLSBRM** — Work with Classes using BRM
+- **WRKCLU** — WORK WITH CLUSTER
+- **WRKCMD** — Commandes de gestion
+- **WRKCMTDFN** — Gérer définitions validation
+- **WRKCNNL** — Gérer les listes de connexion
+- **WRKCNRBRM** — Work with Containers using BRM
+- **WRKCNTINF** — Gérer les points de contact
+- **WRKCOSD** — Gérer les classes de service
+- **WRKCRQD** — WORK WITH CRQ DESCRIPTIONS
+- **WRKCSI** — Work Comm Side Information
+- **WRKCTLD** — Gérer descriptions contrôleurs
+- **WRKCTLGBRM** — Work with Control Groups
+- **WRKDBFIDD** — Gérer fichiers BD avec IDDU
+- **WRKDDMF** — Gérer les fichiers DDM
+- **WRKDEVBRM** — Work with Devices using BRM
+- **WRKDEVD** — Gérer descriptions d'unités
+- **WRKDEVTBL** — Gérer les tables d'unités
+- **WRKDIRE** — Gérer postes du répertoire
+- **WRKDIRLOC** — Gérer lieux du répertoire
+- **WRKDIRSHD** — Gérer réplication répertoires
+- **WRKDOC** — Gérer les documents
+- **WRKDOCLIB** — Gérer des biblio de documents
+- **WRKDOCPRTQ** — Gérer file d'impression de doc
+- **WRKDPCQ** — Gérer les files DSNX/PC
+- **WRKDSKSTS** — Gérer l'état des disques
+- **WRKDSTCLGE** — WORK WITH DST CATALOG ENTRIES
+- **WRKDSTL** — Gérer les listes de diffusion
+- **WRKDSTQ** — Gérer files de distribution
+- **WRKDTAARA** — Gérer les zones de données
+- **WRKDTADCT** — Gérer dictionnaires de données
+- **WRKDTADFN** — Gérer définitions de données
+- **WRKDTAQ** — Gérer les files de données
+- **WRKEDTD** — Gérer descriptions d'édition
+- **WRKENVVAR** — Work with Environment Var
+- **WRKF** — Gérer les fichiers
+- **WRKFCNARA** — Work with Functional Areas
+- **WRKFCNUSG** — Gérer utilisation de fonction
+- **WRKFCT** — WORK WITH FORMS CONTROL TABLE
+- **WRKFLR** — Gérer les dossiers
+- **WRKFLRBRM** — Work with Saved Folders
+- **WRKFNTRSC** — Gérer les ressources police
+- **WRKFORMDF** — Gérer définitions d'imprimé
+- **WRKFTR** — Gérer les filtres
+- **WRKFTRACNE** — Gérer poste action filtre
+- **WRKFTRSLTE** — Gérer poste sélection filtre
+- **WRKGSS** — Gérer jeux symboles graphiques
+- **WRKHACFGD** — WORK WITH HA CONFIG. DESC.
+- **WRKHAPCY** — WORK WITH HA POLICIES
+- **WRKHDWPRD** — Gérer le matériel
+- **WRKHDWRSC** — Gérer les ressources matériel
+- **WRKHLDOPTF** — Gérer fichiers opt suspendus
+- **WRKHSTJS** — Gérer l'historique JS
+- **WRKHYSSTS** — WORK WITH HYPERSWAP STATUS
+- **WRKIMGCLG** — Gérer catalogues images CD-ROM
+- **WRKIMGCLGE** — Gérer les postes de catalogue
+- **WRKIPXD** — Work with IPX Descriptions
+- **WRKJOB** — Gérer un travail
+- **WRKJOBD** — Gérer descriptions de travail
+- **WRKJOBJS** — Gérer les travaux JS
+- **WRKJOBLOG** — Gérer historiques de travail
+- **WRKJOBQ** — Gérer les files de travaux
+- **WRKJOBQD** — Gérer desc file de travaux
+- **WRKJOBSCDE** — Gérer postes planning travaux
+- **WRKJRN** — Gérer la journalisation
+- **WRKJRNA** — Gérer les attributs de journal
+- **WRKJRNRCV** — Gérer récepteurs de journal
+- **WRKJVMJOB** — Gérer les travaux JVM
+- **WRKLANADPT** — Gérer les adaptateurs LAN
+- **WRKLBRM** — Work with Lists using BRM
+- **WRKLIB** — Gérer les bibliothèques
+- **WRKLIBAMT** — WORK WITH LIBRARIES USING AMT
+- **WRKLIBPDM** — Gérer bibliothèques avec PDM
+- **WRKLICINF** — Gérer informations de licence
+- **WRKLIND** — Gérer descriptions de lignes
+- **WRKLNK** — Work with Object Links
+- **WRKLNKBRM** — Work with Link Information
+- **WRKLOCBRM** — Work with Locations using BRM
+- **WRKMBRAMT** — WORK WITH MEMBERS USING AMT
+- **WRKMBRPDM** — Gérer les membres avec PDM
+- **WRKMEDBRM** — Work with Media using BRM
+- **WRKMEDIBRM** — Work with Media Information
+- **WRKMGRIBRM** — Work with Migration Info
+- **WRKMIGSTS** — Work with Migration Status
+- **WRKMLBBRM** — Work with Media Libraries
+- **WRKMLBRSCQ** — Gérer file de ressources MLB
+- **WRKMLBSTS** — Gérer l'état de médiathèque
+- **WRKMLMBRM** — Work with Media Library Media
+- **WRKMNU** — Gérer les menus
+- **WRKMOD** — Gérer les modules
+- **WRKMODD** — Gérer descriptions de modes
+- **WRKMSG** — Gérer les messages
+- **WRKMSGD** — Gérer descriptions de messages
+- **WRKMSGF** — Gérer les fichiers message
+- **WRKMSGQ** — Gérer les files de messages
+- **WRKNAMSMTP** — Work with Names for SMTP
+- **WRKNCK** — Gérer les alias
+- **WRKNETF** — Gérer les fichiers du réseau
+- **WRKNETJOBE** — Gérer postes travaux du réseau
+- **WRKNETTBLE** — Work with Network Table Entry
+- **WRKNODL** — Work with Node List
+- **WRKNODLE** — Work with Node List Entries
+- **WRKNTBD** — Gérer les descriptions NetBIOS
+- **WRKNWID** — Gérer les interfaces de réseau
+- **WRKNWSCFG** — Gérer config serveur réseau
+- **WRKNWSD** — Gérer les serveurs de réseau
+- **WRKNWSENR** — Gérer inscript util serveur
+- **WRKNWSSTG** — Gérer espaces stockage serveur
+- **WRKNWSSTS** — Gérer état serveurs de réseau
+- **WRKOBJ** — Gérer les objets
+- **WRKOBJAMT** — WORK WITH OBJECTS USING AMT
+- **WRKOBJBRM** — Work with Saved Objects
+- **WRKOBJLCK** — Gérer verrouillages d'objet
+- **WRKOBJOWN** — Gérer objets par propriétaire
+- **WRKOBJPDM** — Gérer les objets avec PDM
+- **WRKOBJPGP** — Gérer objets par groupe princ
+- **WRKOBJPVT** — Gérer objets par droits privés
+- **WRKOPCACT** — WORK WITH OPTICONNECT ACTIVITY
+- **WRKOPTDIR** — Gérer les répertoires optiques
+- **WRKOPTF** — Gérer les fichiers optiques
+- **WRKOPTVOL** — Gérer les volumes optiques
+- **WRKOUTQ** — Gérer les files de sortie
+- **WRKOUTQD** — Gérer description file sortie
+- **WRKOVL** — Gérer les fonds de page
+- **WRKPAGDFN** — Gérer les définitions de page
+- **WRKPAGSEG** — Gérer les segments de page
+- **WRKPCLTBLE** — Work with Protocol Table Entry
+- **WRKPCYBRM** — Work with Policies using BRM
+- **WRKPDFMAPE** — WORK WITH PDF MAP ENTRIES
+- **WRKPEXDFN** — Work with PEX Definitions
+- **WRKPEXFTR** — Work with PEX Filters
+- **WRKPFCST** — Gérer contraintes fich phys
+- **WRKPFDL** — Gérer liaisons données fichier
+- **WRKPGM** — Gérer les programmes
+- **WRKPGMTBL** — Gérer les tables de programmes
+- **WRKPMRMTS** — Work With Remote Systems
+- **WRKPMRPTO** — Work With Omissions
+- **WRKPMSCH** — Work With Scheduled Jobs
+- **WRKPNLGRP** — Gérer les groupes de panneaux
+- **WRKPRB** — Gérer les incidents
+- **WRKPRDINF** — Gérer informations produits
+- **WRKPRTSTS** — Gérer l'état de l'impression
+- **WRKPSFCFG** — Gérer les configurations PSF
+- **WRKPTF** — Work with PTF
+- **WRKPTFGRP** — Gérer les groupes de PTF
+- **WRKPTFORD** — Gérer la commande de PTF
+- **WRKQMFORM** — Gérer les formats QM
+- **WRKQMQRY** — Gérer les requêtes QM
+- **WRKQRY** — Gérer les analyses de fichier
+- **WRKQST** — Gérer les questions
+- **WRKRCVCRQA** — WORK WITH RECEIVED CRQ ACT
+- **WRKRCYBRM** — Work with Recovery Activities
+- **WRKRDBDIRE** — Gérer postes répertoire RDB
+- **WRKRDR** — Gérer les lecteurs
+- **WRKREGINF** — Work with Registration Info
+- **WRKRJESSN** — WORK WITH RJE SESSION
+- **WRKRMTDFN** — Gérer définitions éloignées
+- **WRKRPYLE** — Gérer postes liste de réponse
+- **WRKRTDCFG** — Work with RouteD Configuration
+- **WRKS36** — WORK WITH S/36 CONFIGURATION
+- **WRKS36PGMA** — Gérer attributs programme 36
+- **WRKS36PRCA** — Gérer attributs procédure 36
+- **WRKS36SRCA** — Gérer attributs source 36
+- **WRKSAVFBRM** — Work with Save Files
+- **WRKSBMCRQ** — WORK WITH SUBMITTED CRQS
+- **WRKSBMCRQA** — WORK WITH SUBMITTED CRQ ACT
+- **WRKSBMJOB** — Gérer les travaux soumis
+- **WRKSBS** — Gérer les sous-systèmes
+- **WRKSBSD** — Gérer description sous-système
+- **WRKSBSJOB** — Gérer travaux de sous-systèmes
+- **WRKSCHIDX** — Gérer les index d'aide
+- **WRKSCHIDXE** — Gérer postes d'index d'aide
+- **WRKSDSTL** — Work with SMTP Dist Lists
+- **WRKSFWAGR** — Gérer contrats de licence
+- **WRKSHRPOOL** — Gérer pools mémoire partagés
+- **WRKSMTPEMM** — Work with SMTP E-mail Messages
+- **WRKSMTPUSR** — Work with All SMTP Users
+- **WRKSOC** — Gérer la sphère de contrôle
+- **WRKSPADCT** — Gérer les dictionnaires ortho
+- **WRKSPLF** — Gérer les fichiers spoule
+- **WRKSPLFA** — Gérer attributs fichier spoule
+- **WRKSPLFBRM** — Work with Saved Spooled Files
+- **WRKSPTPRD** — Work with Supported Products
+- **WRKSRVAGT** — Gérer Service Agent
+- **WRKSRVPGM** — Gérer programmes de service
+- **WRKSRVPVD** — Gérer prestataires maintenance
+- **WRKSRVRQS** — WORK WITH SERVICE REQUESTERS
+- **WRKSRVTBLE** — Work with Service Table Entry
+- **WRKSSND** — WORK WITH SESSION DESCRIPTION
+- **WRKSYSACT** — Work with System Activity
+- **WRKSYSSTS** — Gérer l'état du système
+- **WRKSYSVAL** — Gérer les valeurs système
+- **WRKTAPCTG** — Gérer les cartouches de bande
+- **WRKTBL** — Gérer les tables
+- **WRKTCPPTP** — Work with Point-to-Point TCPIP
+- **WRKTCPSTS** — Work with TCP/IP Network Sts
+- **WRKTIE** — Gérer TIE
+- **WRKTIMZON** — Gérer descript fuseau horaire
+- **WRKTRC** — Work with Traces
+- **WRKUSRJOB** — Gérer travaux de l'utilisateur
+- **WRKUSRPRF** — Gérer les profils utilisateur
+- **WRKUSRTBL** — Gérer tables d'utilisateurs
+- **WRKWCH** — Work with Watches
+- **WRKWEBQRY** — WORK WITH WEB QUERY
+- **WRKWQRTE** — WORK WITH DB2 WQ RUNTIME ENVS
+- **WRKWTR** — Gérer les éditeurs de spoule

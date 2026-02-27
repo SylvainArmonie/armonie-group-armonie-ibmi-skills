@@ -1,0 +1,36 @@
+     *** Déclaration de fichier IP = Input Primary (Cycle) ***********
+     FBONBONL1IP  E           K        DISK
+     FQPRINT  O   F     132     OF     PRINTER
+     *** Déclaration de tableau chargé à la compilation **************
+     E                    TBB     1   2 80
+     *** Déclaration entrée indicateur fichier ***********************
+     IFBONBON     33
+     I              COULEUR                         COLOR
+     *** Traitement **************************************************
+     *** Fin Traitement **********************************************
+     *** Output ******************************************************
+     *-------Header ----------------------------*
+     OQPRINT  H  1 1   1P
+     O       OR        OF
+     O                         TBB,1
+     O        H        1P
+     O       OR        OF
+     O                         TBB,2
+     O        H        1P
+     O       OR        OF
+     O                         TBB,1
+     *------ Detail -----------------------------*
+     O        D        33
+     O                                      '|'
+     O                         NUMBER  +  1
+     O                                      '|'
+     O                         MARQUE  +  1
+     O                                      '|'
+     O                         NOM     +  1
+     O                                      '|'
+     O                         PRIX  4 +  1
+     O                                 +  1 '|'
+     *--- TABLEAU --------------------------------------------------*
+** TBB
+|-------|---------------------|---------------------|--------|
+| CLE   | MARQUE              | NOM                 | PRIX   |
